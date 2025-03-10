@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../JS_stuff"
+		},
+		{
+			"path": "../../../../DSS"
+		},
+		{
+			"path": "../../../../Project_Euler"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JS_stuff"
+	}
+}
