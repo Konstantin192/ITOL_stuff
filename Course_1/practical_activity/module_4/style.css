@@ -102,3 +102,33 @@ em {
     color: white;
     margin-top: 2rem;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(28, 107, 197, 0.925);
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+footer {
+    position: sticky;
+    bottom: 0px;
+    background-color: rgba(88, 89, 90, 0.89);
+    z-index: 10;
+}
