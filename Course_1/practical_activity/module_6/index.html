@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            Our Location
+        </header>
+        <section class="iframe-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE"
+                title="Google Maps Location"
+                width="600"
+                height="450"
+                loading="lazy"
+                allowfullscreen=""
+                referrerpolicy="no-referrer-when-downgrade"
+                sandbox="allow-scripts allow-same-origin allow-popups">
+                <p>Your browser does not support iframes. Please visit our <a href="location-link">location page</a>.</p>
+            </iframe>
+        </section>
+
+        <div class="iframe-controls">
+            <button onclick="reloadFrame()">Reload Content</button>
+            <button onclick="toggleFullscreen()">Fullscreen</button>
+        </div>
+        
+        <script>
+        function reloadFrame() {
+            const frame = document.querySelector('iframe');
+            frame.src = frame.src;
+        }
+        
+        function toggleFullscreen() {
+            const frame = document.querySelector('iframe');
+            if (frame.requestFullscreen) {
+                frame.requestFullscreen();
+            }
+        }
+        </script>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
