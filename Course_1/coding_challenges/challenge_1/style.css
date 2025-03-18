@@ -1,0 +1,48 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Styling */
+.nav_container {
+    background-color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+}
+
+.main_nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main_nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.main_nav a:hover, #logo {
+    color: #10ddd6;
+}
+
+#logo{
+    font-size: 25px;
+    float: left;
+    margin-left: 2%;
+}
+
+#nav_buttons{
+    margin-right: 4%;
+}
