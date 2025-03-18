@@ -59,17 +59,29 @@ body {
 }
 
 /* Tint for the image */
-#hero_image_container::before {
+/* #hero_image_container::before {
     content: "";
     position: absolute;
     height: 85vh;
     width: 85vw;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 0;
-}
+} */
 
 /* Make the text appear on top of the image tint */
-#header_content {
+#hero_image_text_container {
     position: relative;
     z-index: 1000;
+    padding-top: 15%;
+    padding-left: 15%;
+    width: 50%;
+}
+
+#header_button {
+    float: right;
+}
+
+#header_content {
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
