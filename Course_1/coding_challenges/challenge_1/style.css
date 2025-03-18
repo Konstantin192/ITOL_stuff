@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #474747;
 }
 
 /* Navigation Styling */
@@ -45,4 +45,31 @@ body {
 
 #nav_buttons{
     margin-right: 4%;
+}
+
+#hero_image_container {
+    height: 85vh;
+    width: 85vw;
+    margin: 7.5%;
+    background-image: url(robot_hand.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Tint for the image */
+#hero_image_container::before {
+    content: "";
+    position: absolute;
+    height: 85vh;
+    width: 85vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* Make the text appear on top of the image tint */
+#header_content {
+    position: relative;
+    z-index: 1000;
 }
