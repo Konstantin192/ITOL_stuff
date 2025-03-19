@@ -12,12 +12,18 @@
     <div class="nav_container">
         <nav class="main_nav">
             <i id="logo" class="fa-solid fa-robot"></i>
+
+            <a id="mobile_nav_menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i id="mobile_nav_menu_icon" class="fa-solid fa-bars"></i>
+            </a>
+
             <ul id="nav_buttons">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            
         </nav>
     </div>
 
@@ -73,5 +79,17 @@
 
     </section>
     
+    <!-- Mobile nav menu -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nav_buttons");
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
