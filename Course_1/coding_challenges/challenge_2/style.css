@@ -35,10 +35,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.main_nav a:hover, #logo, footer a:hover, #mobile_nav_menu_icon{
+#nav_buttons a:hover, #logo, footer a:hover, #mobile_nav_menu {
     color: #10ddd6;
-    font-size: 25px;
-
 }
 
 #logo{
@@ -53,6 +51,7 @@ body {
     display: none;
     padding-bottom: 0.5rem; /* Neutralize padding from regular nav menu */
     text-decoration: none;
+    font-size: 25px;
 
 }
 
