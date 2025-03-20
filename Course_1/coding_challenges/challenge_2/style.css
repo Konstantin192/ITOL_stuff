@@ -202,8 +202,15 @@ body {
 
 }
 
-@media screen and (orientation: landscape){
-    /* To Do */
+@media screen and (orientation: landscape)and (max-height: 450px){
+    #text_section_1, #text_section_2{
+        height: 75vh;
+    }
 
+    #paragraph_container_1, #paragraph_container_2{
+        overflow: scroll;
+        /* padding-top: 8%; */
+        display: block;
+    }
 }
 
