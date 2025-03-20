@@ -146,6 +146,7 @@ body {
 
     #nav_buttons{
         display: none;
+        width: 100vw;
     }
 
     #mobile_nav_menu{
@@ -183,4 +184,26 @@ body {
         align-content: center;
     }
     /* Section 2 style end */
+
+    #nav_buttons a {
+        color: white;
+        background: #12a5a0;
+        /* padding: 14px 16px; */
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    #nav_buttons {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+      }
+
 }
+
+@media screen and (orientation: landscape){
+    /* To Do */
+
+}
+
