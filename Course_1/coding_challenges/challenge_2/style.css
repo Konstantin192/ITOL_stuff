@@ -139,7 +139,7 @@ body {
 }
 /* Section 2 style end */
 
-@media screen and (orientation: portrait){
+@media screen and (orientation: portrait) and (max-width: 450px){
     #logo{
         margin-left: 4%;
     }
