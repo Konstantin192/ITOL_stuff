@@ -139,6 +139,11 @@ body {
 }
 /* Section 2 style end */
 
+.active_page{
+    color: #333 !important;
+    background-color: #10ddd6;
+}
+
 @media screen and (orientation: portrait) and (max-width: 450px){
     
     /* Nav bar style start */

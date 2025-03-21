@@ -18,10 +18,10 @@
             </a>
 
             <ul id="nav_buttons">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a id="about_page" href="#about" onclick="currentPageHighlight(this.id)">About</a></li>
+                <li><a id="skills_page" href="#skills" onclick="currentPageHighlight(this.id)">Skills</a></li>
+                <li><a id="projects_page" href="#projects" onclick="currentPageHighlight(this.id)">Projects</a></li>
+                <li><a id="contact_page" href="#contact" onclick="currentPageHighlight(this.id)">Contact</a></li>
             </ul>
             
         </nav>
@@ -82,13 +82,25 @@
     <!-- Mobile nav menu -->
     <script>
         function myFunction() {
-            var x = document.getElementById("nav_buttons");
+            var navigation = document.getElementById("nav_buttons");
 
-            if (x.style.display === "block") {
-                x.style.display = "none";
+            if (navigation.style.display === "block") {
+                navigation.style.display = "none";
             } else {
-                x.style.display = "block";
+                navigation.style.display = "block";
             }
+        }
+
+        function currentPageHighlight(currentPage) {
+            var previousActivePage = document.getElementsByClassName("active_page");
+
+            while (previousActivePage.length)
+                previousActivePage[0].classList.remove("active_page");
+
+
+            var activePage = document.getElementById(currentPage);
+
+            activePage.classList.add("active_page");
         }
     </script>
 </body>
