@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav_container">
+        <nav class="main_nav">
+            <i id="logo" class="fa-solid fa-robot"></i>
+
+            <a id="mobile_nav_menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i id="mobile_nav_menu_icon" class="fa-solid fa-bars"></i>
+            </a>
+
+            <ul id="nav_buttons">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+        </nav>
+    </div>
+
+    <section id="text_section_1">
+
+        <div id="content_container_1">
+
+            <div id="paragraph_container_1">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quos pariatur in exercitationem ea. Quibusdam maiores illo 
+                    laudantium mollitia, nostrum libero veniam? Consequatur 
+                    corrupti veniam dolore inventore id sint nihil maxime.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quos pariatur in exercitationem ea. Quibusdam maiores illo 
+                    laudantium mollitia, nostrum libero veniam? Consequatur 
+                    corrupti veniam dolore inventore id sint nihil maxime.
+                </p>
+            </div>
+
+            <div id="image_container_1">
+                <img id="robot_hand_1" src="robot_hand.jpg" alt="A hologram projected form the palm of a robot hand">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="text_section_2">
+
+        <div id="content_container_2">
+
+            <div id="image_container_2">
+                <img id="robot_hand_2" src="robot_hand.jpg" alt="A hologram projected form the palm of a robot hand">
+            </div>
+
+            <div id="paragraph_container_2">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quos pariatur in exercitationem ea. Quibusdam maiores illo 
+                    laudantium mollitia, nostrum libero veniam?<br><br>
+                    
+                    Consequatur corrupti veniam dolore inventore id sint nihil maxime.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quos pariatur in exercitationem ea.<br><br>
+                    
+                    Quibusdam maiores illo laudantium mollitia, nostrum libero veniam? 
+                    Consequatur corrupti veniam dolore inventore id sint nihil maxime.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!-- Mobile nav menu -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nav_buttons");
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
