@@ -1,0 +1,67 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #474747;
+}
+
+/* Navigation Styling */
+.nav_container {
+    background-color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main_nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main_nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.main_nav a:hover, #logo, footer a:hover{
+    color: #10ddd6;
+}
+
+#logo{
+    font-size: 25px;
+    float: left;
+    margin-left: 2%;
+}
+
+#nav_buttons{
+    margin-right: 4%;
+}
+
+#invite_form_container{
+    width: 30vw;
+    height: 50vh;
+    background-color: white;
+    justify-self: center;
+    margin-top: 20vh;
+}
+
+#invite_form{
+    display: grid;
+    grid: repeat(7, 1fr) / 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
