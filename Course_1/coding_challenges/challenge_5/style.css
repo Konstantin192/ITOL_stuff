@@ -73,6 +73,7 @@ body {
     margin-left: 10vw;
     margin-right: 10vw;
     height: 75vh;
+    gap: 7.5px;
 }
 
 #grid_container div {
@@ -82,7 +83,7 @@ body {
     border-width: 2px;
     text-align: center;
     align-content: center;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 #item_1, #item_2{
