@@ -1,0 +1,113 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #474747;
+}
+
+/* Navigation Styling start */
+.nav_container {
+    background-color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main_nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main_nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.main_nav a:hover, #logo, #logo_footer, footer a:hover, #phone_icon, #envelope_icon{
+    color: #10ddd6;
+}
+
+#logo{
+    font-size: 25px;
+    float: left;
+    margin-left: 2%;
+}
+
+#nav_buttons{
+    margin-right: 4%;
+}
+/* Navigation Styling end */
+
+/* Gallery Styling start */
+#gallery{
+    /* width: 100vw; */
+    height: 75vh;
+}
+/* Gallery Styling end */
+
+/* Footer Styling start */
+footer{
+    /* width: 100vw; */
+    height: 35vh;
+}
+
+#general_contact_details {
+    /* width: 100%; */
+    height: 85%;
+    background-color: #333;
+    display: grid;
+    grid: 1fr / repeat(3, 1fr);
+}
+
+#copyright_statement {
+    /* width: 100%; */
+    height: 15%;
+    background-color: #1e1e1e;
+    color: white;
+    align-content: center;
+    text-align: center;
+}
+
+#general_contact_details section {
+    height: 100%;
+    color: white;
+    padding: 5%;
+}
+
+#user_message_textarea {
+    resize: none;
+    height: 50%;
+}
+
+#user_message_form {
+    height: 75%;
+}
+
+#user_message_form input, #user_message_form textarea{
+    display: block;
+    margin-top: 2%;
+    width: 50%;
+}
+
+#logo_footer {
+    font-size: 100px;
+}
+
+#contact_information {
+    display: block;
+}
+
+
+/* Footer Styling end */
