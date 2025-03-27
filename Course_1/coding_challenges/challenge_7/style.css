@@ -132,6 +132,10 @@ img {
     }
 }
 
+img:hover {
+    transform: scale(1.5);
+}
+
 /* Gallery Styling end */
 
 /* Footer Styling start */
