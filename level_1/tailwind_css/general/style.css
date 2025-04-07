@@ -1,0 +1,13 @@
+.convert {
+    border: 1px solid red;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    background-color: indigo;
+    color: red;
+    padding: 2px;
+    margin: 10px;
+}
+
+/* Tailwind */
+/* class="border-red-400 rounded-md font-sans font-lg bg-indigo-800 text-red-500 p-2 m-5" */
