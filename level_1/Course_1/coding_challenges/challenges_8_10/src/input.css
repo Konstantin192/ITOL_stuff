@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* IMPORTANT! Since Tailwind 4.0 there is no longer a tailwind.config.js , you just do all that stuff here */
+
+/* This is being picked up in index.html even without linking this css file ? */
+@theme {
+    --color-clifford: #da373d;
+  }
