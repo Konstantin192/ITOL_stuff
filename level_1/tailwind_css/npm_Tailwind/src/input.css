@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* This is being picked up in index.html even without linking this css file ? */
+@theme {
+    --color-clifford: #da373d;
+  }
