@@ -1,4 +1,10 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+
+/* This is all stuff that "@import tailwindcss" imports. Disabled preflight because it messes with headings among other things. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+/* @import "tailwindcss/preflight.css" layer(base); */
+@import "tailwindcss/utilities.css" layer(utilities);
 
 /* IMPORTANT! Since Tailwind 4.0 there is no longer a tailwind.config.js , you just do all that stuff here */
 
@@ -6,3 +12,12 @@
 @theme {
     --color-clifford: #da373d;
   }
+
+/* Basic Reset */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } 
+}
