@@ -35,3 +35,7 @@
 #CSS_snake_robot_container {
     align-content: center;
 }
+
+#CSS_banner {
+    background-image: url("images/robot_hand.jpg");
+}
