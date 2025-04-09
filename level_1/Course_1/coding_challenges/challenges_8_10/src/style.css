@@ -9,4 +9,29 @@
     grid-template-areas: 
     "image_1 image_2 image_3"
     "image_4 image_5 image_6";
+    margin: 5%;
+    justify-items: center;
+}
+
+#CSS_awesome_products {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    margin: 5%;
+    justify-items: center;
+    height: 40vh;
+}
+
+#CSS_snake_robot {
+    height: 30vh;
+}
+
+.CSS_awesome_products_info {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+    height: 40vh;
+    align-items: center;
+}
+
+#CSS_snake_robot_container {
+    align-content: center;
 }

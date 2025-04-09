@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=all" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-neutral-300">
     <div class="h-[30vh] bg-neutral-600 content-end justify-items-center pb-[5vh] leading-8 ">
         <h3 class="tracking-widest text-stone-50">Content button title goes here</h3>
         <h5 class="text-stone-50">Content button sub-title description</h5>
         <button class="w-[150px] h-[30px]">Read more button</button>
 
     </div>
-    <main class="h-[100vh] bg-neutral-300">
+    <main>
         <section class="flex gap-[10%] p-[5%] [&>*]:justify-items-center [&>*]:text-center [&>*>span]:!text-[35px]">
             <div>
                 <span class="material-symbols-outlined">paid</span>
@@ -57,6 +57,7 @@
             </p>
         </section>
 
+        <!-- Giving up on trying to make the gallery with Tailwind. Just making it somewhat presentable with regular CSS -->
         <!-- Tailwind just stopped working in this block ??? -->
         <section id="gallery" class="h-[50vh] w-[50vw] m-[10%]">
             <img id="image_1" class="CSS_gallery_image_size" src="images/desert_robot.jpg" alt="">
@@ -69,7 +70,52 @@
         <!-- Tailwind just stopped working in this block ??? -->
 
         <section>
-            <h3>Take a look at our awesome proucts</h3>
+            <h2 class="tracking-widest justify-items-center text-center">Take a look at our awesome proucts</h2>
+            <!-- Tried using the following class (class="grid grid-cols-3 grid-rows-1 gap-4") from https://www.tailwindgen.com/. Tailwind would not apply the grid. -->
+            <section id="CSS_awesome_products" class="[&>*]:text-center">
+                <div class="CSS_awesome_products_info">
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+                    
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+                    
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+                </div>
+                <!-- content center, does not work here even though if you try align-content:centre (the same thing) in dev tools it works. Thnaks tailwind -->
+                <div id="CSS_snake_robot_container" class="max-h-[100%]">
+                    <img id="CSS_snake_robot" src="images/snake_robot.png" alt="">
+                </div>
+                <div class="CSS_awesome_products_info">
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+
+                    <div>
+                        <h3>Content heading</h3>
+                        <p>This is a content section that will allow you to highlight the main aspects 
+                        of what you are or offer</p>
+                    </div>
+                </div>
+            </section>
         </section>
 
     </main>
