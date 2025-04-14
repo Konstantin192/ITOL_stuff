@@ -1,0 +1,56 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url(Images/hero-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#nav_container {
+    display: flex;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#nav_container > h1 {
+    color: white;
+}
+
+#nav_buttons {
+    display: flex;
+    gap: 1%;
+    list-style: none;
+}
+
+#nav_buttons > li{
+    /* IMPORTANT - vertically centering the text */
+    line-height: 4vh;
+    height: 4vh;
+    text-align: center;
+    /* IMPORTANT - vertically centering the text */
+
+    width: 7vw;
+    border: 2px;
+    border-style: solid;
+    border-color: rgba(104,101,95,255);
+    background-color: rgba(49,44,36,255);
+}
+
+#nav_buttons > li > a {
+    text-decoration: none;
+    color: rgba(220,219,218,255);
+}
+
+#nav {
+    width: 100%;
+    justify-items: right;
+    align-content: center;
+}
