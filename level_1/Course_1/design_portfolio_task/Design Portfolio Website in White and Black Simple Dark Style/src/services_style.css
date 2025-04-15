@@ -1,0 +1,146 @@
+@font-face {
+    font-family: Roboto-Black;
+    src: url(Fonts/Roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(Fonts/Roboto/Roboto-Thin.ttf);
+}
+
+/* Basic Reset Start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgba(27,31,36,255);
+}
+/* Basic Reset End*/
+
+/* Navigation start */
+#nav_container {
+    display: flex;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#nav_container > h1 {
+    color: white;
+    font-family: Roboto-Light;
+}
+
+#nav_buttons {
+    display: flex;
+    gap: 1%;
+    list-style: none;
+}
+
+#nav_buttons > li{
+    /* IMPORTANT - vertically centering the text */
+    line-height: 4vh;
+    height: 4vh;
+    text-align: center;
+    /* IMPORTANT - vertically centering the text */
+
+    width: 6vw;
+    border: 2px;
+    border-style: solid;
+    border-color: rgba(104,101,95,255);
+    background-color: rgba(49,44,36,255);
+}
+
+#nav_buttons > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgba(220,219,218,255);
+    font-family: Roboto-Regular;
+}
+
+#nav {
+    width: 100%;
+    justify-items: right;
+    align-content: center;
+}
+/* Navigation end */
+
+main > div > h1, h2, p {
+    color: white;
+}
+
+main {
+    display: flex;
+    /* margin-left: 5vw; */
+    gap: 10vw;
+    margin-top: 25vh;
+    justify-content: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#activities {
+    display: grid;
+    grid: repeat(2 ,1fr) / repeat(2, 1fr);
+    font-family: Roboto-Thin;
+    gap: 15% 5%;
+    /* border-bottom: 3px;
+    border-bottom-style: solid;
+    border-color: white; */
+    padding-bottom: 2%;
+    margin-bottom: 7vh;
+}
+
+#activities > section > p {
+    font-family: Roboto-Regular;
+    font-size: 20px;
+}
+
+#activities > section > h2 {
+    padding-bottom: 2%;
+    font-size: 35px;
+}
+
+main > div > h1 {
+    font-size: 60px;
+    font-family: Roboto-Light;
+}
+
+button {
+    width: 18vw;
+    height: 6vh;
+    color: rgba(27,31,36,255);
+    background-color: white;
+    border: none;
+    font-family: Roboto-Black;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 4vh;
+    float: right;
+}
+
+#activities_container {
+    width: 45vw;
+}
+
+
+#white_line {
+    height: 4px;
+    background-color: white;
+}
