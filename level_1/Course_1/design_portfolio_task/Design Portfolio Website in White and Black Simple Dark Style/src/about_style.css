@@ -4,8 +4,44 @@
 }
 
 @font-face {
+    font-family: Roboto-BlackItalic;
+    src: url(Fonts/Roboto/Roboto-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-BoldItalic;
+    src: url(Fonts/Roboto/Roboto-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Italic;
+    src: url(Fonts/Roboto/Roboto-Italic.ttf);
+}
+
+@font-face {
     font-family: Roboto-Light;
     src: url(Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-LightItalic;
+    src: url(Fonts/Roboto/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(Fonts/Roboto/Roboto-Medium.ttf);
+
+}
+
+@font-face {
+    font-family: Roboto-MediumItalic;
+    src: url(Fonts/Roboto/Roboto-MediumItalic.ttf);
 }
 
 @font-face {
@@ -16,6 +52,11 @@
 @font-face {
     font-family: Roboto-Thin;
     src: url(Fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto-ThinItalic;
+    src: url(Fonts/Roboto/Roboto-ThinItalic.ttf);
 }
 
 /* Basic Reset Start */
@@ -81,65 +122,54 @@ body {
 }
 /* Navigation end */
 
-main > div > h1, h2, p {
+#greeting {
     color: white;
+    width: 20%;
 }
 
-main {
-    display: flex;
-    gap: 10vw;
-    margin-top: 25vh;
-    justify-content: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
-}
-
-#activities {
-    display: grid;
-    grid: repeat(2 ,1fr) / repeat(2, 1fr);
-    font-family: Roboto-Thin;
-    gap: 15% 5%;
-    /* border-bottom: 3px;
-    border-bottom-style: solid;
-    border-color: white; */
-    padding-bottom: 2%;
-    margin-bottom: 7vh;
-}
-
-#activities > section > p {
+section > p {
+    color: white;
     font-family: Roboto-Regular;
-    font-size: 20px;
 }
 
-#activities > section > h2 {
-    padding-bottom: 2%;
-    font-size: 35px;
-}
-
-main > div > h1 {
-    font-size: 60px;
-    font-family: Roboto-Light;
+section > p:first-child {
+    padding-bottom: 2vh;
 }
 
 button {
-    width: 18vw;
-    height: 6vh;
+    width: 21vw;
+    height: 5vh;
     color: rgba(27,31,36,255);
     background-color: white;
     border: none;
     font-family: Roboto-Black;
-    font-size: 20px;
+    font-size: 17px;
     letter-spacing: 1px;
     margin-top: 4vh;
-    float: right;
+    float: left;
 }
 
-#activities_container {
-    width: 45vw;
+main {
+    display: flex;
+    gap: 13vw;
+    margin-top: 25vh;
+    justify-content: center;
+    margin-left: 7vw;
+    margin-right: 7vw;
 }
 
+#introduction {
+    width: 40%;
+}
 
-#white_line {
-    height: 4px;
-    background-color: white;
+#greeting > h1 {
+    font-size: 70px;
+    font-family: Roboto-Light;
+    line-height: normal;
+}
+
+#greeting > h2 {
+    padding-bottom: 3%;
+    font-size: 30px;
+    font-family: Roboto-Light;
 }
