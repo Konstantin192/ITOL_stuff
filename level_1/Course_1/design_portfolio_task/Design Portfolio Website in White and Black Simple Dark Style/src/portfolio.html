@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="portfolio_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <div id="nav_container">
-        <h1>NOVA</h1>
+        <h1 id="logo">NOVA</h1>
+
+        <!-- Mobile nav menu -->
+        <a id="mobile_nav_menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i id="mobile_nav_menu_icon" class="fa-solid fa-bars"></i>
+        </a>
+
         <nav id="nav">
             <ul id="nav_buttons">
                 <li><a href="index.html">Home</a></li>
@@ -32,6 +39,19 @@
         <img src="Images/gallery3.jpg" alt="A laptop infront of a computer screen, next to them a cup sized green plant all in a very sunny room">
         <img src="Images/gallery6.jpg" alt="3 webpage design sketches coloured with water paints">
     </div>
+
+    <!-- Mobile nav menu -->
+    <script>
+        function myFunction() {
+            var nav_buttons = document.getElementById("nav_buttons");
+
+            if (nav_buttons.style.display === "block") {
+                nav_buttons.style.display = "none";
+            } else {
+                nav_buttons.style.display = "block";
+            }
+        }
+    </script>
     
 </body>
 </html>

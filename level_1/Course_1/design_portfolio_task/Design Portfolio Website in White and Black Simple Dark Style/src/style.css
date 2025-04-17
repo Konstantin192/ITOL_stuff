@@ -124,7 +124,6 @@ body {
     justify-items: right;
     align-content: center;
 }
-/* Navigation end */
 
 #mobile_nav_menu {
     float: right;
@@ -135,6 +134,7 @@ body {
     text-decoration: none;
     display: none;
 }
+/* Navigation end */
 
 #introduction {
     padding-left: 4%;
