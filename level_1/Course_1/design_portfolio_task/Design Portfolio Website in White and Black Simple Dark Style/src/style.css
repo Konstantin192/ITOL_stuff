@@ -73,6 +73,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(12,12,12,255);
+    background-position-y: 15%;
 }
 /* Basic Reset End*/
 
@@ -136,7 +137,8 @@ body {
 }
 
 #introduction {
-    margin-left: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
     margin-top: 19%;
     margin-bottom: 8%;
 }
@@ -212,5 +214,23 @@ body {
     
     #introduction > section > p {
         width: 100%;
+    }
+
+    #introduction {
+        text-align: center;
+    }
+
+    body {
+        background-position-x: center;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    #background_cover {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 99vh;
     }
 }
