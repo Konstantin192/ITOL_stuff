@@ -185,23 +185,12 @@ body {
         width: 100%;
     }
 
-    /* #nav {
-        display: none;
-    } */
-
     #mobile_nav_menu{
         display: flex;
         float: right;
     }
 
-    /* #nav_container{
-        height: 8vh;
-    } */
-
     #nav_buttons a {
-        /* color: white; */
-        /* background: #12a5a0; */
-        /* padding: 14px 16px; */
         text-decoration: none;
         font-size: 17px;
         display: block;
@@ -224,5 +213,4 @@ body {
     #introduction > section > p {
         width: 100%;
     }
-
 }
