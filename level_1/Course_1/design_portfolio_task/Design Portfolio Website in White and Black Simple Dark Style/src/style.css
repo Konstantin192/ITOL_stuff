@@ -170,6 +170,10 @@ body {
     font-family: Roboto-Regular;
 }
 
+#title_linebreak {
+    display: none;
+}
+
 /* Phone portrait */
 @media screen and (orientation: portrait) and (max-width: 450px){
     /* Nav bar style start */
@@ -218,6 +222,10 @@ body {
 
     #introduction {
         text-align: center;
+        width: 100%;
+        height: 90%;
+        margin-top: initial;
+        align-content: center;
     }
 
     body {
@@ -232,5 +240,9 @@ body {
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
         height: 99vh;
+    }
+
+    #title_linebreak {
+        display: initial;
     }
 }
