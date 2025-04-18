@@ -11,7 +11,13 @@
     <div id="background_cover">
         <!-- Navigation -->
         <div id="nav_container">
-            <h1>NOVA</h1>
+            <h1 id="logo">NOVA</h1>
+
+            <!-- Mobile nav menu -->
+            <a id="mobile_nav_menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i id="mobile_nav_menu_icon" class="fa-solid fa-bars"></i>
+            </a>
+            
             <nav id="nav">
                 <ul id="nav_buttons">
                     <li><a href="index.html">Home</a></li>
@@ -51,6 +57,17 @@
 
     </div>
 
-    
+    <!-- Mobile nav menu -->
+    <script>
+        function myFunction() {
+            var nav_buttons = document.getElementById("nav_buttons");
+
+            if (nav_buttons.style.display === "block") {
+                nav_buttons.style.display = "none";
+            } else {
+                nav_buttons.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
