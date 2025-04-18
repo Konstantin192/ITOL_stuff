@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <link rel="stylesheet" href="services_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <div id="nav_container">
-        <h1>NOVA</h1>
+        <h1 id="logo">NOVA</h1>
+
+        <!-- Mobile nav menu -->
+        <a id="mobile_nav_menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i id="mobile_nav_menu_icon" class="fa-solid fa-bars"></i>
+        </a>
+
         <nav id="nav">
             <ul id="nav_buttons">
                 <li><a href="index.html">Home</a></li>
@@ -51,15 +58,24 @@
             </div>
 
             <!-- Not sure whether this or just border bottom for "activities" div is better -->
+            <!-- Can't figure out how to prevent text overflowing from "activities" div from going over this line without using overflow properties -->
             <div id="white_line"></div>
 
             <button>WORK WITH NOVA</button>
-        </div>
-
-        
-
-        
-
+        </div>       
     </main>
+
+     <!-- Mobile nav menu -->
+     <script>
+        function myFunction() {
+            var nav_buttons = document.getElementById("nav_buttons");
+
+            if (nav_buttons.style.display === "block") {
+                nav_buttons.style.display = "none";
+            } else {
+                nav_buttons.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
