@@ -131,10 +131,12 @@ main > div > h1 {
     font-family: Roboto-Light;
 }
 
-button {
+#activities_container > a {
     width: 18vw;
     min-width: 240px;
     height: 6vh;
+    min-height: 60px;
+    display: inline-block;
     color: rgba(27,31,36,255);
     background-color: white;
     border: none;
@@ -143,6 +145,9 @@ button {
     letter-spacing: 1px;
     margin-top: 4vh;
     float: right;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
 }
 
 #activities_container {
@@ -201,7 +206,7 @@ button {
         grid: repeat(4 ,1fr) / repeat(1, 1fr);
         gap: 5%;
         align-items: center;
-        margin-bottom: 3vh;
+        margin-bottom: 10vh;
     }
 
     #activities_container {
@@ -217,7 +222,41 @@ button {
         text-align: center;
     }
 
-    button {
+    #activities_container > a {
         float: initial;
     }
 }
+
+/* Mobile landscape start*/
+@media screen and (orientation: landscape)and (max-height: 450px){
+    #nav_buttons > li {
+        line-height: 9vh;
+        height: 10vh;
+        text-align: center;
+        width: 12vw;
+    }
+
+    /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */
+    #nav_buttons {
+        display: flex !important;
+    }
+
+    main {
+        display: block;
+        padding-top: 16vh;
+    }
+
+    main > div > h1 {
+        justify-self: center;
+    }
+
+    #activities {
+        margin-bottom: 10vh;
+    }
+
+    #activities_container {
+        width: initial;
+        padding-bottom: 30vh;
+    }
+}
+/* Mobile landscape end*/
