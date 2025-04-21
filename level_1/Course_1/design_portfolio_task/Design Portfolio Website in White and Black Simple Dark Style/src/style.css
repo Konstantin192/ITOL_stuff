@@ -143,15 +143,20 @@ body {
     margin-bottom: 8%;
 }
 
-#introduction > button {
+#introduction > a {
     width: 12vw;
     height: 4vh;
-    min-width: 150px;
+    min-width: 200px;
     min-height: 50px;
     color: rgba(27,31,36,255);
     background-color: white;
     border: none;
     font-family: Roboto-Black;
+    display: inline-block;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 #introduction > section > * {
