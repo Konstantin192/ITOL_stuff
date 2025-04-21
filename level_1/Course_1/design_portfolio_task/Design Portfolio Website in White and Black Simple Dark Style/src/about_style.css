@@ -100,7 +100,7 @@ section > p:first-child {
     padding-bottom: 2vh;
 }
 
-button {
+/* button {
     width: 21vw;
     height: 5vh;
     min-width: 200px;
@@ -112,6 +112,25 @@ button {
     letter-spacing: 1px;
     margin-top: 4vh;
     float: left;
+} */
+
+#introduction > section a {
+    width: 21vw;
+    height: 5vh;
+    min-width: 200px;
+    min-height: 50px;
+    display: inline-block;
+    color: rgba(27,31,36,255);
+    background-color: white;
+    border: none;
+    font-family: Roboto-Black;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: 4vh;
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
 }
 
 main {
@@ -190,7 +209,11 @@ main {
         text-align: center;
     }
 
-    button {
+    /* button {
+        float: initial;
+    } */
+
+    #introduction > section a {
         float: initial;
     }
 
@@ -213,3 +236,60 @@ main {
         line-height: normal;
     }
 }
+
+/* Mobile landscape start*/
+@media screen and (orientation: landscape)and (max-height: 450px){
+    #nav_buttons > li {
+        line-height: 9vh;
+        height: 10vh;
+        text-align: center;
+        width: 12vw;
+    }
+
+    /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */
+    #nav_buttons {
+        display: flex !important;
+    }
+
+    main {
+        display: block;
+        padding-top: 16vh;
+        padding-bottom: 10vh;
+    }
+
+    /* main > div > h1 {
+        justify-self: center;
+    } */
+
+    #greeting {
+        width: initial;
+        justify-items: center;
+        margin-bottom: 3%;
+    }
+
+    #introduction {
+        width: initial;
+    }
+
+    #greeting > h1 {
+        font-size: 50px;
+    }
+
+    #greeting > h2 {
+        padding-bottom: 1%;
+    }
+
+    section > p:first-child {
+        padding-bottom: 2%;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    #introduction > section a {
+        float: initial;
+    }
+
+}
+/* Mobile landscape end*/
