@@ -100,20 +100,6 @@ section > p:first-child {
     padding-bottom: 2vh;
 }
 
-/* button {
-    width: 21vw;
-    height: 5vh;
-    min-width: 200px;
-    color: rgba(27,31,36,255);
-    background-color: white;
-    border: none;
-    font-family: Roboto-Black;
-    font-size: 17px;
-    letter-spacing: 1px;
-    margin-top: 4vh;
-    float: left;
-} */
-
 #introduction > section a {
     width: 21vw;
     height: 5vh;
@@ -127,7 +113,7 @@ section > p:first-child {
     font-size: 17px;
     letter-spacing: 1px;
     margin-top: 4vh;
-    float: left;
+    /* float: left; */
     text-decoration: none;
     text-align: center;
     align-content: center;
@@ -209,10 +195,6 @@ main {
         text-align: center;
     }
 
-    /* button {
-        float: initial;
-    } */
-
     #introduction > section a {
         float: initial;
     }
@@ -256,10 +238,6 @@ main {
         padding-top: 16vh;
         padding-bottom: 10vh;
     }
-
-    /* main > div > h1 {
-        justify-self: center;
-    } */
 
     #greeting {
         width: initial;
