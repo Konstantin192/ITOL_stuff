@@ -244,7 +244,9 @@ body {
     #background_cover {
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
-        height: 99vh;
+        height: 100vh;
+        position: fixed;
+        overflow: scroll;
     }
 
     #title_linebreak {
@@ -276,7 +278,9 @@ body {
     #background_cover {
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
-        height: 115vh; /* Artificial padding for #introduction. If padding was applied to #introuction #background_cover would not stretch across the whole background image*/
+        height: 100vh; /* Artificial padding for #introduction. If padding was applied to #introuction #background_cover would not stretch across the whole background image*/
+        position: fixed;
+        overflow: scroll;
     }
 
     /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */

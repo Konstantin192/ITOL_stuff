@@ -131,6 +131,7 @@ button {
     width: 11vw;
     height: 6vh;
     min-width: 180px;
+    min-height: 50px;
     color: rgba(27,31,36,255);
     background-color: white;
     border: none;
@@ -206,6 +207,7 @@ main > h1 {
         padding-bottom: 5vh;
         text-align: center;
         height: 90%;
+        width: 100%;
         align-content: center;
     }
 
@@ -218,3 +220,30 @@ main > h1 {
         padding-bottom: 5%;
     }
 }
+
+/* Mobile landscape start*/
+@media screen and (orientation: landscape)and (max-height: 450px){
+    #nav_buttons > li {
+        line-height: 9vh;
+        height: 10vh;
+        text-align: center;
+        width: 12vw;
+    }
+
+    /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */
+    #nav_buttons {
+        display: flex !important;
+    }
+
+    #background_cover {
+        position: fixed;
+        overflow: scroll;
+    }
+
+    main > h1 {
+        justify-self: center;
+        text-align: center;
+    }
+
+}
+/* Mobile landscape end*/
