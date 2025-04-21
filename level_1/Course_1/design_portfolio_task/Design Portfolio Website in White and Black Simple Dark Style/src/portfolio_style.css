@@ -152,3 +152,19 @@ body {
         contain: initial;
     }
 }
+
+/* Mobile landscape start*/
+@media screen and (orientation: landscape)and (max-height: 450px){
+    #nav_buttons > li {
+        line-height: 9vh;
+        height: 10vh;
+        text-align: center;
+        width: 12vw;
+    }
+
+    /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */
+    #nav_buttons {
+        display: flex !important;
+    }
+}
+/* Mobile landscape end*/

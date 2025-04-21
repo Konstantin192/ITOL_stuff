@@ -278,5 +278,10 @@ body {
         width: 100vw;
         height: 115vh; /* Artificial padding for #introduction. If padding was applied to #introuction #background_cover would not stretch across the whole background image*/
     }
+
+    /* Prevent the navigation buttons from staying hidden when switching orientation after using mobile portrait hamburger nav menu */
+    #nav_buttons {
+        display: flex !important;
+    }
 }
 /* Mobile landscape end*/
