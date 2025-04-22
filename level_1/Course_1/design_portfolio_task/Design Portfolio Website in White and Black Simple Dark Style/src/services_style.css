@@ -260,3 +260,51 @@ main > div > h1 {
     }
 }
 /* Mobile landscape end*/
+
+/* Tablet large portrait start*/
+@media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
+    /* Nav bar style start */
+    #logo{
+        font-size: 50px;
+    }
+
+    #nav_buttons > li > a {
+        font-size: 30px;
+    }
+
+    #nav_buttons > li {
+        line-height: 6vh;
+        height: 6vh;
+        width: 14vw;
+    }
+    /* Nav bar style end */
+
+    main {
+        display: block;
+        justify-items: center;
+        padding-top: 10vh;
+    }
+
+    #activities_container {
+        width: initial;
+    }
+
+    #activities > section > p {
+        font-size: 30px;
+    }
+
+    #activities > section > h2 {
+        font-size: 43px;
+    }
+
+    main > div > h1 {
+        font-size: 90px;
+    }
+
+    #activities_container > a {
+        width: 35vw;
+        font-size: 30px;
+    }
+ 
+}
+/* Tablet large portrait end*/
