@@ -290,7 +290,7 @@ body {
 }
 /* Mobile landscape end*/
 
-/* Tablet portrait start*/
+/* Tablet large portrait start*/
 @media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
     /* Nav bar style start */
     #logo{
@@ -334,5 +334,5 @@ body {
     }
     
 }
-/* Tablet portrait end*/
+/* Tablet large portrait end*/
 
