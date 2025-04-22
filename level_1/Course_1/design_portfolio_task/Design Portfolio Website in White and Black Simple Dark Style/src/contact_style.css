@@ -247,3 +247,31 @@ main > h1 {
 
 }
 /* Mobile landscape end*/
+
+/* Tablet large portrait start*/
+@media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
+    /* Nav bar style start */
+    #logo{
+        font-size: 50px;
+    }
+
+    #nav_buttons > li > a {
+        font-size: 30px;
+    }
+
+    #nav_buttons > li {
+        line-height: 6vh;
+        height: 6vh;
+        width: 14vw;
+    }
+    /* Nav bar style end */
+
+    form > label {
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 30px;
+    }
+}
+/* Tablet large portrait end*/
