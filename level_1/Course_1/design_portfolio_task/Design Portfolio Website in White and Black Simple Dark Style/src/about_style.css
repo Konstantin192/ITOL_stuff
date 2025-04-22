@@ -271,3 +271,48 @@ main {
 
 }
 /* Mobile landscape end*/
+
+/* Tablet large portrait start*/
+@media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
+    /* Nav bar style start */
+    #logo{
+        font-size: 50px;
+    }
+
+    #nav_buttons > li > a {
+        font-size: 30px;
+    }
+
+    #nav_buttons > li {
+        line-height: 6vh;
+        height: 6vh;
+        width: 14vw;
+    }
+    /* Nav bar style end */
+
+    main {
+        display: block;
+        padding-top: 10vh;
+    }
+
+    #greeting {
+        justify-items: center;
+        width: initial;
+        padding-bottom: 2vh;
+    }
+
+    #introduction {
+        width: initial;
+    }
+
+    #introduction > section {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #introduction > section a {
+        width: 24vw;
+        font-size: 25px;
+    }
+}
+/* Tablet large portrait end*/
