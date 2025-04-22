@@ -289,3 +289,50 @@ body {
     }
 }
 /* Mobile landscape end*/
+
+/* Tablet portrait start*/
+@media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
+    /* Nav bar style start */
+    #logo{
+        font-size: 50px;
+    }
+
+    #nav_buttons > li > a {
+        font-size: 30px;
+    }
+
+    #nav_buttons > li {
+        line-height: 6vh;
+        height: 6vh;
+        width: 14vw;
+    }
+    /* Nav bar style end */
+    
+    html {
+        height: 100%;
+    }
+
+    #introduction{
+        font-size: 30px;
+    }
+
+    #introduction > section > p {
+        width: 50%;
+    }
+
+    #introduction > a {
+        width: 35vw;
+        height: 6vh;
+    }
+
+    #introduction > section > h1 {
+        font-size: 90px;
+    }
+
+    body {      
+        background-position-x: 30%;
+    }
+    
+}
+/* Tablet portrait end*/
+
