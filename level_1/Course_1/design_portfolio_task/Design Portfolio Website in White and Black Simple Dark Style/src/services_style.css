@@ -305,6 +305,10 @@ main > div > h1 {
         width: 35vw;
         font-size: 30px;
     }
+
+    #activities_container {
+        text-align: center;
+    }
  
 }
 /* Tablet large portrait end*/
