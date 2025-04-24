@@ -78,6 +78,7 @@ body {
     width: 100%;
     justify-items: right;
     align-content: center;
+    display: grid;
 }
 
 #mobile_nav_menu {
@@ -265,22 +266,22 @@ main > div > h1 {
 @media screen and (orientation: portrait) and (min-width: 451px) and (max-width: 1100px){
     /* Nav bar style start */
     #logo{
-        font-size: 50px;
+        font-size: 34px;
     }
 
     #nav_buttons > li > a {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     #nav_buttons > li {
-        line-height: 6vh;
-        height: 6vh;
-        width: 14vw;
+        line-height: 4vh;
+        height: 4vh;
+        width: 12vw;
     }
     /* Nav bar style end */
 
     main {
-        display: block;
+        display: grid;
         justify-items: center;
         padding-top: 10vh;
     }
@@ -302,8 +303,9 @@ main > div > h1 {
     }
 
     #activities_container > a {
-        width: 35vw;
-        font-size: 30px;
+        width: 23vw;
+        height: 4vh;
+        font-size: 20px;
     }
 
     #activities_container {
