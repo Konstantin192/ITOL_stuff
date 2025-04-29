@@ -4,10 +4,10 @@
 // }
 
 
-// function changeText() {
-//     var heading = document.getElementById("demo");
-//     heading.textContent = "New text";
-// }
+function changeText() {
+    var heading = document.getElementById("demo");
+    heading.textContent = "New text";
+}
 
 
 // var myAge = 43;
