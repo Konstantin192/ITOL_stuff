@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Car Control</title>
+</head>
+<body>
+    <canvas
+        id="canvas"
+        width="600"
+        height="400"
+        style="background-color: grey;"
+    ></canvas>
+    <br>
+    <button onclick="changeDirection('left')">Turn Left</button>
+    <button onclick="changeDirection('right')">Turn right</button> <br>
+    <button onclick="changeSpeed('increase')">Increase Speed</button>
+    <button onclick="changeSpeed('decrease')">Decrease Speed</button><br>
+    <button onclick="changeColor()">Change Color</button><br>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        let car = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            direction: 0, // in degrees
+            speed: 2,
+            color: "blue",
+            passengers: 4,
+            isMoving: false
+        };
+
+        function drawCar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.translate(car.x, car.y);
+            ctx.rotate((car.direction * Math.PI) / 180);
+            ctx.fillStyle = car.color;
+            ctx.fillRect(-15, -10, 30, 20); // car body
+            ctx.fillStyle = "black";
+            ctx.fillRect(-10, -8, 20, 16); // car windows
+            ctx.restore();
+        }
+
+        function updateCar() {
+            car.x += car.speed * Math.cos((car.direction * Math.PI) / 180);
+            car.y += car.speed * Math.sin((car.direction * Math.PI) / 180);
+
+            if (
+                car.x > canvas.width ||
+                car.x < 0 ||
+                car.y > canvas.height ||
+                car.y < 0
+            ) {
+                car.direction += 180; // Turn the car around when it reaches the edge of the canvas
+            }
+        }
+
+        function changeDirection(turn) {
+            if (turn == "left") {
+                car.direction -= 11.25;
+            }
+            else if (turn === "right") {
+                car.direction += 11.25;
+            }
+        }
+
+        function changeSpeed(action) {
+            if (action === "increase") {
+                car.speed += 1;
+            }
+            else if (action === "decrease") {
+                car.speed -= 1;
+                if(car.speed < 0) car.speed = 0;
+            }
+        }
+
+        function changeColor() {
+            car.color = prompt("Enter a color for the car: ", car.color);
+        }
+
+        function gameLoop() {
+            updateCar();
+            drawCar();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+        
+</body>
+</html>
