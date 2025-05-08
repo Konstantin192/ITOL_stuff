@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manipulating arrays</h1>
+
+    <input type="text" name="elementAddition" id="elementAddition" placeholder="Input element to add" required>
+    <label for="elementAddition" style="color: red; display: none;" id="elementAddition_error">Field cannot be empty</label>
+    <button id="push" onclick="addLast()">Add Last</button>
+    <button id="unshift" onclick="addFirst()">Add First</button>
+
+    <br>
+    <button id="pop" onclick="removeLast()">Remove Last</button>
+    <button id="shift" onclick="removeFirst()">Remove First</button>
+
+    <br>
+    <input type="number" id="elementRemoval" placeholder="Input index at which to remove element" required min="0">
+    <label for="elementAddition" style="color: red; display: none;" id="elementRemoval_error">Field cannot be empty</label>
+    <button id="splice" onclick="removeElement()">Remove at index</button>
+
+    <ul id="arrayElements"></ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>
