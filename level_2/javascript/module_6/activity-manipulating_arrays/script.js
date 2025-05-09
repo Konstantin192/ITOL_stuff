@@ -60,15 +60,18 @@ function displayArray() {
     let elementList = document.querySelector("#arrayElements");
     let element;
     let elementDisplay;
+    let index = 0;
 
     elementList.innerHTML = "";
 
     array.forEach(item => {
         // var task_input = document.querySelector("#task_input").value;
         element = document.createElement("li");
-        elementDisplay = document.createTextNode(`Element ${array.indexOf(item)}: ${item}`);
+        elementDisplay = document.createTextNode(`Element ${index}: ${item}`);
         
         element.appendChild(elementDisplay);
         elementList.appendChild(element);
+
+        index += 1;
     });
 }
