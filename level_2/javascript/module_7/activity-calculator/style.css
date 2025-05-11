@@ -1,0 +1,9 @@
+#result {
+    display: block;
+    margin-top: 1%;
+}
+
+#blank_input_error, #divide_zero_error {
+    color: red;
+    display: none;
+}
