@@ -17,7 +17,7 @@
 
         function App() {
             // array destructuring - https://javascript.info/destructuring-assignment
-            const [time, setTime] = React.useState(new Date().toLocaleTimeString()); // useState serves as an initializer ? in this case for time
+            const [time, setTime] = React.useState(new Date().toLocaleTimeString()); // useState serves as an initializer? in this case for time
             // useEffect serves as a setter ? in this case for setTime
             React.useEffect(function() {
                 setInterval(function() {
