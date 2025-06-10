@@ -8,6 +8,11 @@ Create a React application with a form to add and categorize jobs, including inp
 
 Enhance the visual appearance of the job management application form created in the previous activity by adding CSS styles.
 
+# Practical Activity: Enhancing the Job Management Application with Reusable Components
+## Objective
+
+Refactor the existing job management application to use more reusable components, implement props for dynamic content, and create a flexible layout for job status columns.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
