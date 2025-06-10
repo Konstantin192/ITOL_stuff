@@ -11,7 +11,7 @@ const JobForm = () => {
             <div className="bottom-line">
                 <button className='tag'>Read Emails</button>
                 <button className='tag'>Web Parsing</button>
-                <button className='tag`'>Send Emails</button>
+                <button className='tag'>Send Emails</button>
             </div>
         </div>
 
