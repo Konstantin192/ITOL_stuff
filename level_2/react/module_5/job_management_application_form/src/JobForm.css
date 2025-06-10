@@ -1,0 +1,56 @@
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.bot-input {
+  font-size: 23px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 40px;
+}
+
+.form-details {
+  /* Add styles for the form details section */
+  /* width: 40%; */
+}
+
+.bottom-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tag {
+  font-size: 14px;
+  font-weight: 300;
+  background-color: cadetblue;
+  padding: 4px 20px;
+}
+
+.job-status {
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid #999;
+  width: 135px;
+  padding: 0px 5px;
+  height: 40px;
+}
+
+.submit-data {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: brown;
+  color: #fff;
+  border-radius: 5px;
+  height: 50px;
+  padding: 7px 15px;
+  margin-left: 15px;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./JobForm.css"
 
 const JobForm = () => {
   return (
@@ -8,9 +9,9 @@ const JobForm = () => {
 
         <div className="form-details">
             <div className="bottom-line">
-                <button>Read Emails</button>
-                <button>Web Parsing</button>
-                <button>Send Emails</button>
+                <button className='tag'>Read Emails</button>
+                <button className='tag'>Web Parsing</button>
+                <button className='tag`'>Send Emails</button>
             </div>
         </div>
 
