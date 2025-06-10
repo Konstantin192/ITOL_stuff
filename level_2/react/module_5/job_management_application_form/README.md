@@ -1,3 +1,8 @@
+# Practical Activity: Building a Job Management Application Form
+## Objective 
+
+Create a React application with a form to add and categorize jobs, including input fields, category selection, and job status options.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
