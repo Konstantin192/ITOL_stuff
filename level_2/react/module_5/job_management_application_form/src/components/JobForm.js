@@ -1,11 +1,15 @@
 import React from 'react';
 import './JobForm.css';
+import { useRef } from 'react';
 
-const JobForm = () => {
+const JobForm = ( {addNewJob} ) => {
+
+  const inputRef = useRef();
+
   return (
     <div className="form-header">
       <form>
-        <input type="text" className="bot-input" placeholder="Enter the job"/>
+        <input type="text" className="bot-input" placeholder="Enter the job" ref={inputRef}/>
 
         <div className="form-details">
             <div className="bottom-line">
@@ -22,8 +26,9 @@ const JobForm = () => {
             <option value="stopped">Stopped</option>
         </select>
 
-        <button type="submit" className="submit-data">Add Job</button>
+        {/* <button className="submit-data" onClick={() => addNewJob(inputRef.current.value)}>Add Job</button> */}
       </form>
+      <button className="submit-data" onClick={() => addNewJob(inputRef.current.value)}>Add Job</button>
     </div>
   );
 };

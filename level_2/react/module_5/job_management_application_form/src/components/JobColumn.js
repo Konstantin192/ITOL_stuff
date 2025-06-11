@@ -1,7 +1,8 @@
 import React from 'react';
 import './JobColumn.css';
+import JobStatus from './JobStatus';
 
-const JobColumn = ({ title, image, alt, job_list }) => {
+const JobColumn = ({ title, image, alt, job_list, delete_Job }) => {
   return (
     <div className="job-column">
       <h2 className="heading-status">
@@ -12,7 +13,7 @@ const JobColumn = ({ title, image, alt, job_list }) => {
         {<ul>
             {job_list.map(job => 
             <li key={job.id}>
-                {job.title}
+                <JobStatus jobTitle = {job.title} jobID={job.id} deleteJob={delete_Job} />
             </li>)}
         </ul>}
       </div>

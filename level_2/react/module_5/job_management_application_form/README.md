@@ -13,6 +13,11 @@ Enhance the visual appearance of the job management application form created in 
 
 Refactor the existing job management application to use more reusable components, implement props for dynamic content, and create a flexible layout for job status columns.
 
+# Practical Activity: Implementing Dynamic Functionality in the Job Management Application
+## Objective
+ 
+Enhance the job management application by adding functionality to the delete button, implementing job status updates, and managing the overall state of the application.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
