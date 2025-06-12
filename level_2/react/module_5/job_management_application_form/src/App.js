@@ -27,11 +27,14 @@ const App = () => {
   };
 
   const updateJobStatus = (id, newStatus) => {
-    jobs.map(job => {
-      if(job.id === id) {
-        job.status = newStatus;
-      }}
-    )
+    
+    // setJobs(jobs.map(job => {
+    //   if(job.id === id) {
+    //     job.status = newStatus;
+    //   }}
+    // ));
+
+    setJobs(jobs.map(job => (job.id === id ? {...job, status: newStatus} : job))); 
   };
 
   const addNewJob = (title) => {
@@ -42,9 +45,6 @@ const App = () => {
   const newJobID = () => {
     let lastJob = jobs.slice(jobs.length - 1);
     let newJobID = lastJob[0].id + 1;
-
-    console.log(jobs);
-    console.log(newJobID);
 
     return newJobID;
   }
@@ -60,31 +60,34 @@ const App = () => {
     }
   }, [newJob]);
 
+
   return (
     <div className="app">
-      <button onClick={() => addNewJob("test")}>Test</button>
       {/* Other components */}
       <JobForm addNewJob={addNewJob}/>
       <div className="job-columns">
         <JobColumn 
-          title="Need to Start" 
+          columnTitle="Need to Start" 
           image={toDoIcon} alt="To-do icon" 
           job_list={filterJobs("Need to Start")} 
           delete_Job={deleteJob} 
+          update_status={updateJobStatus}
         />
         <JobColumn 
-          title="In progress" 
+          columnTitle="In progress" 
           image={inProgressIcon} 
           alt="In progress icon" 
           job_list={filterJobs("In progress")} 
           delete_Job={deleteJob}
+          update_status={updateJobStatus}
         />
         <JobColumn 
-          title="Done" 
+          columnTitle="Done" 
           image={doneIcon} 
           alt="Done icon" 
           job_list={filterJobs("Done")} 
           delete_Job={deleteJob}
+          update_status={updateJobStatus}
         />
       </div>
     </div>
