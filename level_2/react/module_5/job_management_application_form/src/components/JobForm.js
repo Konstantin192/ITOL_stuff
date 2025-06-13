@@ -16,7 +16,7 @@ const JobForm = ( {addNewJob} ) => {
         <input type="text" className="bot-input" placeholder="Enter the job" ref={inputRef}/>
         <button className="submit-data" onClick={() => addNewJob(inputRef.current.value)}>Add Job</button>
 
-        <div className="form-details">
+        {/* <div className="form-details">
             <div className="bottom-line">
                 <button className='tag'>Read Emails</button>
                 <button className='tag'>Web Parsing</button>
@@ -29,7 +29,7 @@ const JobForm = ( {addNewJob} ) => {
             <option value="running">Running</option>
             <option value="completed">Completed</option>
             <option value="stopped">Stopped</option>
-        </select>
+        </select> */}
       </form>
       {/* <button className="submit-data" onClick={() => addNewJob(inputRef.current.value)}>Add Job</button> */}
     </div>
