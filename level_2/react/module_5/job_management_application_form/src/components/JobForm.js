@@ -1,20 +1,23 @@
 import React from 'react';
 import './JobForm.css';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const JobForm = ( {addNewJob} ) => {
 
-  const inputRef = useRef();
+  // const inputRef = useRef();
+
+  const [inputValue, setInputValue] = useState("");
 
   const preventFormRefresh = (e) => {
+    setInputValue("");
     e.preventDefault();
   }
 
   return (
     <div className="form-header">
       <form onSubmit={preventFormRefresh}>
-        <input type="text" className="bot-input" placeholder="Enter the job" ref={inputRef}/>
-        <button className="submit-data" onClick={() => addNewJob(inputRef.current.value)}>Add Job</button>
+        <input type="text" value={inputValue} className="bot-input" placeholder="Enter the job" /*ref={inputRef}*/ onChange={(e) => setInputValue(e.target.value)}/>
+        <button className="submit-data" onClick={() => addNewJob(inputValue)}>Add Job</button>
 
         {/* <div className="form-details">
             <div className="bottom-line">
