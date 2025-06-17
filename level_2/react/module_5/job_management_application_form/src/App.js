@@ -59,6 +59,15 @@ const App = () => {
     return newJobID;
   }
 
+  const clearLocalStorage = () => {
+    setJobs([
+      { id: 1, title: 'Do the thing', status: 'Need to Start' },
+      { id: 2, title: 'Do the other thing', status: 'In progress' },
+      { id: 3, title: 'Do that thing', status: 'Done' }
+    ]);
+    localStorage.removeItem("jobs");
+  }
+
   // IMPORTANT - Helps addNewJob function by avoiding batching of updates e.g the updates of the new job getting 
   // batched with the updates of the list and so the new job gets added to the job list before it has its details updated
   useEffect(() => {
@@ -78,7 +87,7 @@ const App = () => {
   return (
     <div className="app">
       {/* Other components */}
-      <JobForm addNewJob={addNewJob}/>
+      <JobForm addNewJob={addNewJob} clearLocalStorage={clearLocalStorage}/>
       <div className="job-columns">
         <JobColumn 
           columnTitle="Need to Start" 

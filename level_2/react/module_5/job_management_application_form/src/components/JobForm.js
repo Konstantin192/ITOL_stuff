@@ -2,7 +2,7 @@ import React from 'react';
 import './JobForm.css';
 import { useRef, useState } from 'react';
 
-const JobForm = ( {addNewJob} ) => {
+const JobForm = ( {addNewJob, clearLocalStorage} ) => {
 
   // const inputRef = useRef();
 
@@ -18,6 +18,7 @@ const JobForm = ( {addNewJob} ) => {
       <form onSubmit={preventFormRefresh}>
         <input type="text" value={inputValue} className="bot-input" placeholder="Enter the job" /*ref={inputRef}*/ onChange={(e) => setInputValue(e.target.value)}/>
         <button className="submit-data" onClick={() => addNewJob(inputValue)}>Add Job</button>
+        <button onClick={() => clearLocalStorage()}>Clear local storage</button>
 
         {/* <div className="form-details">
             <div className="bottom-line">
