@@ -10,11 +10,21 @@ const App = () => {
 
   const [isFirstPageRender, setIsFirstPageRender] = useState(true);
   
-  const [jobs, setJobs] = useState([
-    { id: 1, title: 'Do the thing', status: 'Need to Start' },
-    { id: 2, title: 'Do the other thing', status: 'In progress' },
-    { id: 3, title: 'Do that thing', status: 'Done' }
-  ]);
+  // const [jobs, setJobs] = useState([
+  //   { id: 1, title: 'Do the thing', status: 'Need to Start' },
+  //   { id: 2, title: 'Do the other thing', status: 'In progress' },
+  //   { id: 3, title: 'Do that thing', status: 'Done' }
+  // ]);
+
+  const [jobs, setJobs] = useState(() => {
+    const savedJobs = localStorage.getItem('jobs');
+    return savedJobs ? JSON.parse(savedJobs) : [
+      { id: 1, title: 'Do the thing', status: 'Need to Start' },
+      { id: 2, title: 'Do the other thing', status: 'In progress' },
+      { id: 3, title: 'Do that thing', status: 'Done' }
+    ];
+    
+  });
 
   const [newJob, setNewJob] = useState({ id: -1, title: '', status: '' });
 
@@ -53,12 +63,16 @@ const App = () => {
   // batched with the updates of the list and so the new job gets added to the job list before it has its details updated
   useEffect(() => {
     if(!isFirstPageRender) {
-      setJobs([...jobs, newJob]);
+      setJobs(prevJobs => [...prevJobs, newJob]);
     }
     else {
       setIsFirstPageRender(false);
     }
   }, [newJob]);
+
+  useEffect(() => {
+    localStorage.setItem('jobs', JSON.stringify(jobs));
+  }, [jobs])
 
 
   return (
