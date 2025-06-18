@@ -1,18 +1,12 @@
 import React from 'react';
-import { calculateInvestmentResults } from '../util/investments';
+import { calculateInvestmentResults, formatter } from '../util/investments';
+// import './OutputData.css'
 
 const OutputData = ({ inputValue }) => {
-    // Component logic will go here
-
-    const resultData = calculateInvestmentResults({
-        initialInvestment: +inputValue.initialInvestment,
-        annualInvestment: +inputValue.annualInvestment,
-        expectedReturn: +inputValue.expectedReturn,
-        duration: +inputValue.duration
-    });
+    const resultData = calculateInvestmentResults(inputValue);
 
     return (
-        <table>
+        <table id="result">
             <thead>
                 <tr>
                     <th>Year</th>
@@ -22,17 +16,18 @@ const OutputData = ({ inputValue }) => {
                     <th>Invested Capital</th>
                 </tr>
             </thead>
-
             <tbody>
-                {resultData.map((yearData, index) => (
-                    <tr key={index}>
-                        <td>{yearData.year}</td>
-                        <td>{yearData.investmentValue.toFixed(2)}</td>
-                        <td>{yearData.interest.toFixed(2)}</td>
-                        <td>{yearData.totalInterest.toFixed(2)}</td>
-                        <td>{yearData.investedCapital.toFixed(2)}</td>
-                    </tr>
-                ))}
+                {resultData.map((yearData) => {
+                    return (
+                        <tr key={yearData.year}>
+                            <td>{yearData.year}</td>
+                            <td>{formatter.format(yearData.investmentValue)}</td>
+                            <td>{formatter.format(yearData.interest)}</td>
+                            <td>{formatter.format(yearData.totalInterest)}</td>
+                            <td>{formatter.format(yearData.investedCapital)}</td>
+                        </tr>
+                    );
+                })}
             </tbody>
         </table>
     );
