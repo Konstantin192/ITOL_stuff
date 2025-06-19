@@ -3,19 +3,7 @@ import '../App.css'
 import { useState } from 'react';
 
 
-
-const UserInput = () => {
-
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10
-  });
-
-  const handleChange = (inputIdentifier, newValue) => {
-    setUserInput((prevUserInput) => ({...prevUserInput, [inputIdentifier]: +newValue}))
-  };
+const UserInput = ({userInput, onInputChange}) => {
 
   return (
     <section id="user-input">
@@ -26,7 +14,7 @@ const UserInput = () => {
             type="number" 
             id="initialInvestment"
             value={userInput.initialInvestment}
-            onChange={(e) => handleChange('initialInvestment', e.target.value)}
+            onChange={(e) => onInputChange('initialInvestment', e.target.value)}
           />
         </div>
 
@@ -36,7 +24,7 @@ const UserInput = () => {
             type="number" 
             id="annualInvestment"
             value={userInput.annualInvestment}
-            onChange={(e) => handleChange('annualInvestment', e.target.value)}
+            onChange={(e) => onInputChange('annualInvestment', e.target.value)}
           />
         </div>
 
@@ -46,7 +34,7 @@ const UserInput = () => {
             type="number" 
             id="expectedReturn"
             value={userInput.expectedReturn}
-            onChange={(e) => handleChange('expectedReturn', e.target.value)}
+            onChange={(e) => onInputChange('expectedReturn', e.target.value)}
           />
         </div>
 
@@ -56,7 +44,7 @@ const UserInput = () => {
             type="number" 
             id="duration"
             value={userInput.duration}
-            onChange={(e) => handleChange('duration', e.target.value)}
+            onChange={(e) => onInputChange('duration', e.target.value)}
           />
         </div>
       </form>
