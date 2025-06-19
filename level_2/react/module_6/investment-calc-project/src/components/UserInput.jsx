@@ -3,7 +3,7 @@ import '../App.css'
 import { useState } from 'react';
 
 
-const UserInput = ({userInput, onInputChange}) => {
+const UserInput = ({userInput, onInputChange, handleCalculate}) => {
 
   return (
     <section id="user-input">
@@ -48,6 +48,7 @@ const UserInput = ({userInput, onInputChange}) => {
           />
         </div>
       </form>
+      
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import jsPDF from 'jspdf';
 
 export function generatepdf(data){
+    
     const doc = new jsPDF();
 
     doc.setFontSize(20);
@@ -22,7 +23,7 @@ export function generatepdf(data){
         doc.text(`Year: ${result.year}`, 10, yOffset)
         doc.text(`Interest (Year): ${result.interest.toFixed(2)}`,10, (yOffset+linespacing))
         doc.text(`Interest (Total): ${result.totalInterest.toFixed(2)}`,10, (yOffset+2*linespacing))
-        doc.text(`Invested Capital: ${result.investedCap.toFixed(2)}`,10, (yOffset+3*linespacing))
+        doc.text(`Invested Capital: ${result.investedCapital.toFixed(2)}`,10, (yOffset+3*linespacing))
         doc.text(`Total Investment Value: ${result.investmentValue.toFixed(2)}`,10, (yOffset+4*linespacing))
 
         yOffset+=60;

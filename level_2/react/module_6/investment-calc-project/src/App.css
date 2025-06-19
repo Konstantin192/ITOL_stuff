@@ -87,3 +87,8 @@ button:hover{
 button:active{
   transform: translate(3px);
 }
+
+.errorMessage {
+  text-align: center;
+  font-size: 30px;
+}

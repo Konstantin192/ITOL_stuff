@@ -1,3 +1,5 @@
+"npm run dev" while in project directory to start project
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
