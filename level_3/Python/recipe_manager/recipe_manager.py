@@ -19,8 +19,8 @@ def main():
 
     # core_functions.view_recipes(recipe_list)
     # core_functions.search_recipe_titles(recipe_list, "Salmon")
-
-    core_functions.search_recipe_ingredients(recipe_list, "rice")
+    # core_functions.search_recipe_ingredients(recipe_list, "rice")
+    # core_functions.delete_recipe(recipe_list, 0)
 
 if __name__ == "__main__":
     main()

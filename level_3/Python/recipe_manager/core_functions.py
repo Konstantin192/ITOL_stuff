@@ -4,7 +4,7 @@ from recipe import Recipe
 def add_recipe(recipe_list, title, ingredients, instructions):
     new_recipe = Recipe(title, ingredients, instructions)
     recipe_list.append(new_recipe)
-    return recipe_list
+    # return recipe_list
 
 def view_recipes(recipe_list):
     for recipe in recipe_list:
@@ -29,3 +29,8 @@ def search_recipe_ingredients(recipe_list, ingredient):
             result_list.append(recipe)
 
     view_recipes(result_list)
+
+def delete_recipe(recipe_list, recipe_index):
+    recipe_list.pop(recipe_index)
+    view_recipes(recipe_list)
+    # return recipe_list
