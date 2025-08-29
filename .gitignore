@@ -1,3 +1,6 @@
 level_1/tailwind_css/npm_Tailwind/node_modules
 level_1/Course_1/coding_challenges/challenge_8/node_modules
 level_2/react/module_6/investment-calc-project/node_modules
+
+# PyCharm seems to ignore these by default but VSCode picks them up
+*.pyc
