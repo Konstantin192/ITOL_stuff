@@ -10,17 +10,26 @@ def main():
                               ["cut ingredients", "mix ingredients"])
     core_functions.add_recipe(recipe_list,
                               "Salmon with potatoes and carrots",
-                              ["salmon fillet", "carrots, potatoes"],
+                              ["salmon fillet", "carrots", "potatoes"],
                               ["cut ingredients", "season ingredients", "put into air fryer"])
     core_functions.add_recipe(recipe_list,
                               "Vegetable fried rice",
                               ["rice", "red onions", "bell peper", "spring onion", "frozen peas", "eggs", "soy sauce", "sesame seed oil"],
                               ["boil rice", "mix rice with vegetables and sauces", "put in air fryer"])
 
+
+
     # core_functions.view_recipes(recipe_list)
     # core_functions.search_recipe_titles(recipe_list, "Salmon")
     # core_functions.search_recipe_ingredients(recipe_list, "rice")
     # core_functions.delete_recipe(recipe_list, 0)
+
+    # new_title = input("What is the new recipe title? ")
+    # recipe_list[1].change_title(new_title)
+    # core_functions.view_recipes(recipe_list)
+
+    # recipe_list[1].view_ingredients()
+    recipe_list[1].change_ingredients()
 
 if __name__ == "__main__":
     main()

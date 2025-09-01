@@ -7,8 +7,12 @@ Recipe details data types
 Ingredients - String vs Array vs List
 Instructions - String vs Array vs List
 
-
-
+Editing recipe ingredients
+Ask "Yes" or "No" after every edit if the user wishes to continue editing ingredients - can be annoying if editing
+multiple ingredients but makes more sense from an end user standpoint
+OR
+Require the user to enter "0" after they are done with their edits - not annoying when editing multiple ingredients but
+can feel a bit odd from an end user standpoint
 
 
 
