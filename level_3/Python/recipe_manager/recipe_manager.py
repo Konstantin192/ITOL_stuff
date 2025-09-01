@@ -29,7 +29,10 @@ def main():
     # core_functions.view_recipes(recipe_list)
 
     # recipe_list[1].view_ingredients()
-    recipe_list[1].change_ingredients()
+    # recipe_list[1].change_ingredients()
+
+    # recipe_list[1].view_instructions()
+    recipe_list[1].change_instructions()
 
 if __name__ == "__main__":
     main()
