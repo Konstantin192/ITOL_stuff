@@ -41,7 +41,7 @@ class Recipe:
         remove_more_ingredients = 1
 
         while remove_more_ingredients == 1:
-            ingredient_to_remove = int(input("Enter index ingredient to remove: "))
+            ingredient_to_remove = int(input("Enter index of ingredient to remove: "))
             self.ingredients_list.pop(ingredient_to_remove - 1)
 
             print("New ingredient list: ")
@@ -70,6 +70,36 @@ class Recipe:
     def view_instructions(self):
         for instruction in self.instructions:
             print(f"{self.instructions.index(instruction) + 1}. {instruction}")
+
+
+    def add_instructions(self):
+        print("Current instruction list: ")
+        self.view_instructions()
+        add_more_instructions = 1
+
+        while add_more_instructions == 1:
+            new_instruction = input("Enter new instruction: ")
+            self.instructions.append(new_instruction)
+
+            print("New instruction list: ")
+            self.view_instructions()
+
+            add_more_instructions = int(input("Would you like to add another instruction?: \n1. Yes \n2. No \n"))
+
+
+    def remove_instructions(self):
+        print("Current instruction list: ")
+        self.view_instructions()
+        remove_more_instructions = 1
+
+        while remove_more_instructions == 1:
+            instruction_to_remove = int(input("Enter index of instruction to remove: "))
+            self.instructions.pop(instruction_to_remove - 1
+                                  )
+            print("New instruction list: ")
+            self.view_instructions()
+
+            remove_more_instructions = int(input("Would you like to remove another instruction?: \n1. Yes \n2. No \n"))
 
 
     def change_instructions(self):
