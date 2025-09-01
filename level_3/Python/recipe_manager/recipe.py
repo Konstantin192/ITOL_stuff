@@ -20,6 +20,36 @@ class Recipe:
             print(f"{self.ingredients_list.index(ingredient) + 1}. {ingredient}")
 
 
+    def add_ingredients(self):
+        print("Current ingredient list: ")
+        self.view_ingredients()
+        add_more_ingredients = 1
+
+        while add_more_ingredients == 1:
+            new_ingredient = input("Enter new ingredient: ")
+            self.ingredients_list.append(new_ingredient)
+
+            print("New ingredient list: ")
+            self.view_ingredients()
+
+            add_more_ingredients = int(input("Would you like to add another ingredient?: \n1. Yes \n2. No \n"))
+
+
+    def remove_ingredients(self):
+        print("Current ingredient list: ")
+        self.view_ingredients()
+        remove_more_ingredients = 1
+
+        while remove_more_ingredients == 1:
+            ingredient_to_remove = int(input("Enter index ingredient to remove: "))
+            self.ingredients_list.pop(ingredient_to_remove - 1)
+
+            print("New ingredient list: ")
+            self.view_ingredients()
+
+            remove_more_ingredients = int(input("Would you like to remove another ingredient?: \n1. Yes \n2. No \n"))
+
+
     def change_ingredients(self):
         print("Current ingredient list: ")
         self.view_ingredients()

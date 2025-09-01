@@ -20,3 +20,8 @@ can feel a bit odd from an end user standpoint
 
 
 Assumptions made:
+
+Ideas:
+Adding ingredients / instructions before or after certain elements already in that list. - While this would be a good
+quality of life change I feel like it would not add much to the project and the current editing functionality fulfils
+the requirement of the project spec.

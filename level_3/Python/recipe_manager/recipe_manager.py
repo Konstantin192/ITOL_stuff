@@ -32,7 +32,9 @@ def main():
     # recipe_list[1].change_ingredients()
 
     # recipe_list[1].view_instructions()
-    recipe_list[1].change_instructions()
+    # recipe_list[1].change_instructions()
+    # recipe_list[1].add_ingredients()
+    recipe_list[1].remove_ingredients()
 
 if __name__ == "__main__":
     main()
