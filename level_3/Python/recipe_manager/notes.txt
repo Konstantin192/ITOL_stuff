@@ -2,6 +2,7 @@ Recipe data structure Class VS Dictionary
 Class structure would allow for better encapsulation as all functionality relating to a recipe would be contained
 within the class. With a Dictionary structure there would have to be a separate recipe utils file that contains all the
 functionality.
+With Dictionaries it would have been easier to implement file I/O operations with JSON
 
 Recipe details data types
 Ingredients - String vs Array vs List
@@ -14,12 +15,15 @@ OR
 Require the user to enter "0" after they are done with their edits - not annoying when editing multiple ingredients but
 can feel a bit odd from an end user standpoint
 
-
+File I/O
+CSV vs JSON -
 
 
 
 
 Assumptions made:
+The user will not intentionally alter the contents of the text file storing the recipe list in an attempt to break the
+application
 
 Ideas:
 Adding ingredients / instructions before or after certain elements already in that list. - While this would be a good

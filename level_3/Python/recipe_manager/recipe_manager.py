@@ -1,4 +1,9 @@
 import core_functions
+import os
+import json
+
+from core_functions import load_recipes, view_recipes, save_recipes
+from recipe import Recipe
 
 
 def main():
@@ -36,7 +41,11 @@ def main():
     # recipe_list[1].add_ingredients()
     # recipe_list[1].remove_ingredients()
     # recipe_list[1].add_instructions()
-    recipe_list[1].remove_instructions()
+    # recipe_list[1].remove_instructions()
+
+
+    save_recipes(recipe_list)
+
 
 if __name__ == "__main__":
     main()
