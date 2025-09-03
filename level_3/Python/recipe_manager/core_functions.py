@@ -3,15 +3,30 @@ from recipe import Recipe
 import json
 
 
-def add_recipe(recipe_list, title, ingredients, instructions):
+def add_recipe(recipe_list):
+    title = input("Enter recipe title: ")
+    ingredients = []
+    instructions = []
+
     new_recipe = Recipe(title, ingredients, instructions)
+
+    new_recipe.add_ingredients()
+    new_recipe.add_instructions()
+
     recipe_list.append(new_recipe)
+
+    print("Recipe added")
     # return recipe_list
 
 
 def view_recipes(recipe_list):
+    print("\nCurrent recipes:")
+
     for recipe in recipe_list:
         print(f"{(recipe_list.index(recipe) + 1)}. {recipe.title}")
+
+    selected_recipe = int(input("\nSelect recipe to view: "))
+    recipe_list[selected_recipe - 1].view_recipe_details()
 
     print() # Purely to make console more readable
 

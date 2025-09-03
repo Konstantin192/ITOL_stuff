@@ -1,9 +1,9 @@
 import core_functions
 import os
 import json
-
 from core_functions import load_recipes, view_recipes, save_recipes
 from recipe import Recipe
+import menus
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
     #                           ["rice", "red onions", "bell peper", "spring onion", "frozen peas", "eggs", "soy sauce", "sesame seed oil"],
     #                           ["boil rice", "mix rice with vegetables and sauces", "put in air fryer"])
 
-    view_recipes(recipe_list)
+    menus.main_menu(recipe_list)
 
 
     save_recipes(recipe_list)

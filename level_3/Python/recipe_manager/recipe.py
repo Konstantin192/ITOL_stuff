@@ -4,6 +4,18 @@ class Recipe:
         self.ingredients_list = ingredients_list
         self.instructions = instructions
 
+    def view_recipe_details(self):
+        print("\nTitle:")
+        print(f"{self.title} \n")
+
+        print("Ingredients:")
+        self.view_ingredients()
+        print("")
+
+        print("Instructions:")
+        self.view_instructions()
+        print("")
+
 
     def change_title(self):
         old_title = self.title
@@ -16,8 +28,12 @@ class Recipe:
 
 
     def view_ingredients(self):
-        for ingredient in self.ingredients_list:
-            print(f"{self.ingredients_list.index(ingredient) + 1}. {ingredient}")
+        if len(self.ingredients_list) == 0:
+            print("No ingredients")
+
+        else:
+            for ingredient in self.ingredients_list:
+                print(f"{self.ingredients_list.index(ingredient) + 1}. {ingredient}")
 
 
     def add_ingredients(self):
@@ -68,8 +84,12 @@ class Recipe:
 
 
     def view_instructions(self):
-        for instruction in self.instructions:
-            print(f"{self.instructions.index(instruction) + 1}. {instruction}")
+        if len(self.instructions) == 0:
+            print("No instructions")
+
+        else:
+            for instruction in self.instructions:
+                print(f"{self.instructions.index(instruction) + 1}. {instruction}")
 
 
     def add_instructions(self):
