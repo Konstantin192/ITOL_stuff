@@ -25,9 +25,6 @@ def view_recipes(recipe_list):
     for recipe in recipe_list:
         print(f"{(recipe_list.index(recipe) + 1)}. {recipe.title}")
 
-    selected_recipe = int(input("\nSelect recipe to view: "))
-    recipe_list[selected_recipe - 1].view_recipe_details()
-
     print() # Purely to make console more readable
 
 

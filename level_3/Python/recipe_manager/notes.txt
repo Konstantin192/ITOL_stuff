@@ -18,6 +18,13 @@ can feel a bit odd from an end user standpoint
 File I/O
 CSV vs JSON -
 
+Editing / Deleting recipes option place - At main menu level OR At recipe details level
+It would be more obvious to the user if the edit and delete recipe options were present at the main menu. If they were
+at the recipe details level the user would have to go through several other menus and as such these functionalities may
+seem hidden or hard to find.
+If the edit and delete options were at the recipe details level the user would have an easier time deciding what to do
+as the details of the recipe would be right there as opposed to having to navigate several other menus to get to them.
+
 
 
 
