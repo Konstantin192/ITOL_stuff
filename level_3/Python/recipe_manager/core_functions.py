@@ -51,22 +51,30 @@ def save_recipes(recipe_list):
             recipe_file.write("")
             recipe_file.close()
 
-    # Convert the objects of the recipe list to dictionaries so they can be put in a JSON format
-    json_list = json.dumps([recipe.__dict__ for recipe in recipe_list])
+    if len(recipe_list) > 0:
+        # Convert the objects of the recipe list to dictionaries so they can be put in a JSON format
+        json_list = json.dumps([recipe.__dict__ for recipe in recipe_list])
 
-    with open(recipe_list_file_path, "w") as recipe_file:
-        recipe_file.write(json_list)
+        with open(recipe_list_file_path, "w") as recipe_file:
+            recipe_file.write(json_list)
+            recipe_file.close()
 
 
-# ToDo - Error handling for when the file exists but is empty or does not exist at all
 def load_recipes(recipe_list):
     recipe_list_path = "recipe_list.txt"
     recipe_list_file_exists = os.path.isfile(recipe_list_path)
+    recipe_list_file_size = None
 
     if recipe_list_file_exists:
-        with open(recipe_list_path, "r") as recipe_file:
-            recipes_to_load = json.load(recipe_file)
+        recipe_list_file_size = os.stat(recipe_list_path).st_size
 
-            for recipe in recipes_to_load:
-                recipe_load = Recipe(recipe["title"], recipe["ingredients_list"], recipe["instructions"])
-                recipe_list.append(recipe_load)
+        # Check if the recipe file is blank
+        if recipe_list_file_size != 0:
+            with open(recipe_list_path, "r") as recipe_file:
+                recipes_to_load = json.load(recipe_file)
+
+                for recipe in recipes_to_load:
+                    recipe_load = Recipe(recipe["title"], recipe["ingredients_list"], recipe["instructions"])
+                    recipe_list.append(recipe_load)
+
+                recipe_file.close()
