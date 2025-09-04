@@ -41,10 +41,18 @@ def search_recipe_titles(recipe_list):
 
 def search_recipe_ingredients(recipe_list):
     result_list = list()
-    ingredient = input("Enter ingredient name: ")
+    ingredient = input("Enter ingredient name: ").lower()
+
+    # for recipe in recipe_list:
+    #     if ingredient.lower() in map(str.lower, recipe.ingredients_list):
+    #         result_list.append(recipe)
 
     for recipe in recipe_list:
-        if ingredient.lower() in map(str.lower, recipe.ingredients_list):
+        recipe_ingredients = map(str.lower, recipe.ingredients_list)
+
+        # The filter function is passing the variable "recipe_ingredients" to the lambda function as a
+        # parameter "recipe_ingredients_list"
+        if any(filter(lambda recipe_ingredients_list: ingredient in recipe_ingredients_list, recipe_ingredients)):
             result_list.append(recipe)
 
     view_recipes(result_list)
