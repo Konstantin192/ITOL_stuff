@@ -36,3 +36,8 @@ Ideas:
 Adding ingredients / instructions before or after certain elements already in that list. - While this would be a good
 quality of life change I feel like it would not add much to the project and the current editing functionality fulfils
 the requirement of the project spec.
+
+
+Challenges faced:
+Reading data from file and transforming it into code
+Checking if a substring is within the recipe ingredients list of each recipe within a Recipe object list

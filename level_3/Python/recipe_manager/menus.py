@@ -17,12 +17,10 @@ def main_menu(recipe_list):
         match option_selected:
             # View recipes
             case 1:
-                core_functions.view_recipes(recipe_list)
-                selected_recipe = int(input("\nSelect recipe to view: "))
-                recipe_list[selected_recipe - 1].view_recipe_details()
+                recipe_view_menu(recipe_list)
             # Add recipes
             case 2:
-                core_functions.add_recipe(recipe_list)
+                recipe_add_menu(recipe_list)
             # Edit recipes
             case 3:
                 core_functions.view_recipes(recipe_list)
@@ -54,11 +52,41 @@ def main_menu(recipe_list):
                     core_functions.search_recipe_titles(recipe_list)
                 else:
                     core_functions.search_recipe_ingredients(recipe_list)
-
-
             # Exit
             case 0:
                 application_exit = True
+
+
+def recipe_view_menu(recipe_list):
+    back_to_main_menu = False;
+
+    while not back_to_main_menu:
+        core_functions.view_recipes(recipe_list)
+        selected_recipe = int(input("\nSelect recipe to view: "))
+        recipe_list[selected_recipe - 1].view_recipe_details()
+
+        print("\nOptions: ")
+        print("1. View more Recipes")
+        print("2. Back to Main Menu")
+        option_select = int(input("\nWhat would you like to do? : "))
+
+        if option_select == 2:
+            back_to_main_menu = True
+
+
+def recipe_add_menu(recipe_list):
+    back_to_main_menu = False
+
+    while not back_to_main_menu:
+        core_functions.add_recipe(recipe_list)
+
+        print("\nOptions: ")
+        print("1. Add more Recipes")
+        print("2. Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        if selected_option == 2:
+            back_to_main_menu = True
 
 
 def recipe_edit_menu(recipe_list, selected_recipe, selected_edit):
