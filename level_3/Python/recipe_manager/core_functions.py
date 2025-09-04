@@ -28,8 +28,9 @@ def view_recipes(recipe_list):
     print() # Purely to make console more readable
 
 
-def search_recipe_titles(recipe_list, title):
+def search_recipe_titles(recipe_list):
     result_list = list()
+    title = input("\nEnter recipe title: ")
 
     for recipe in recipe_list:
         if title.lower() in recipe.title.lower():
@@ -38,8 +39,9 @@ def search_recipe_titles(recipe_list, title):
     view_recipes(result_list)
 
 
-def search_recipe_ingredients(recipe_list, ingredient):
+def search_recipe_ingredients(recipe_list):
     result_list = list()
+    ingredient = input("Enter ingredient name: ")
 
     for recipe in recipe_list:
         if ingredient.lower() in map(str.lower, recipe.ingredients_list):

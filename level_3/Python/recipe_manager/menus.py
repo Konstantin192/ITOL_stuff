@@ -43,6 +43,20 @@ def main_menu(recipe_list):
                 selected_recipe_delete = int(input("\nWhich would you like to delete? : "))
 
                 core_functions.delete_recipe(recipe_list, selected_recipe_delete - 1)
+            # Search recipes
+            case 5:
+                print("\nRecipe search options: ")
+                print("1. Search by Title")
+                print("2. Search by Ingredients")
+                selected_search = int(input("\nWhat would you like to do? : "))
+
+                if selected_search == 1:
+                    core_functions.search_recipe_titles(recipe_list)
+                else:
+                    core_functions.search_recipe_ingredients(recipe_list)
+
+
+            # Exit
             case 0:
                 application_exit = True
 
