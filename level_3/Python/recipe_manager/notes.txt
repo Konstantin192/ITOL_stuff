@@ -32,6 +32,7 @@ Assumptions made:
 The user will not intentionally alter the contents of the text file storing the recipe list in an attempt to break the
 application
 
+
 Ideas:
 Adding ingredients / instructions before or after certain elements already in that list. - While this would be a good
 quality of life change I feel like it would not add much to the project and the current editing functionality fulfils

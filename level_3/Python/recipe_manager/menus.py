@@ -23,35 +23,13 @@ def main_menu(recipe_list):
                 recipe_add_menu(recipe_list)
             # Edit recipes
             case 3:
-                core_functions.view_recipes(recipe_list)
-                selected_recipe = int(input("\nSelect recipe to edit: "))
-                recipe_list[selected_recipe - 1].view_recipe_details()
-
-                print("Recipe edit options: ")
-                print("1. Change title")
-                print("2. Edit ingredients")
-                print("3. Edit instructions")
-                selected_edit = int(input("\nWhat would you like to do? : "))
-
-                recipe_edit_menu(recipe_list,selected_recipe, selected_edit)
+                recipe_edit_menu(recipe_list)
             # Delete recipes
             case 4:
-                print("\nCurrent recipes")
-                core_functions.view_recipes(recipe_list)
-                selected_recipe_delete = int(input("\nWhich would you like to delete? : "))
-
-                core_functions.delete_recipe(recipe_list, selected_recipe_delete - 1)
+                recipe_delete_menu(recipe_list)
             # Search recipes
             case 5:
-                print("\nRecipe search options: ")
-                print("1. Search by Title")
-                print("2. Search by Ingredients")
-                selected_search = int(input("\nWhat would you like to do? : "))
-
-                if selected_search == 1:
-                    core_functions.search_recipe_titles(recipe_list)
-                else:
-                    core_functions.search_recipe_ingredients(recipe_list)
+                recipe_search_menu(recipe_list)
             # Exit
             case 0:
                 application_exit = True
@@ -89,7 +67,32 @@ def recipe_add_menu(recipe_list):
             back_to_main_menu = True
 
 
-def recipe_edit_menu(recipe_list, selected_recipe, selected_edit):
+def recipe_edit_menu(recipe_list):
+    back_to_main_menu = False
+
+    while not back_to_main_menu:
+        core_functions.view_recipes(recipe_list)
+        selected_recipe = int(input("\nSelect recipe to edit: "))
+        recipe_list[selected_recipe - 1].view_recipe_details()
+
+        print("Recipe edit options: ")
+        print("1. Change title")
+        print("2. Edit ingredients")
+        print("3. Edit instructions")
+        selected_edit = int(input("\nWhat would you like to do? : "))
+
+        recipe_edit_submenu(recipe_list, selected_recipe, selected_edit)
+
+        print("\nOptions: ")
+        print("1. Edit more recipes")
+        print("2. Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        if selected_option == 2:
+            back_to_main_menu = True
+
+
+def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
     match selected_edit:
         # Change recipe title
         case 1:
@@ -124,3 +127,45 @@ def recipe_edit_menu(recipe_list, selected_recipe, selected_edit):
                     recipe_list[selected_recipe - 1].remove_instructions()
                 case 3:
                     recipe_list[selected_recipe - 1].change_instructions()
+
+
+def recipe_delete_menu(recipe_list):
+    back_to_main_menu = False
+
+    while not back_to_main_menu:
+        print("\nCurrent recipes")
+        core_functions.view_recipes(recipe_list)
+        selected_recipe_delete = int(input("\nWhich would you like to delete? : "))
+
+        core_functions.delete_recipe(recipe_list, selected_recipe_delete - 1)
+
+        print("\nOptions: ")
+        print("1. Delete more recipes")
+        print("2. Back to Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        if selected_option == 2:
+            back_to_main_menu = True
+
+
+def recipe_search_menu(recipe_list):
+    back_to_main_menu = False
+
+    while not back_to_main_menu:
+        print("\nRecipe search options: ")
+        print("1. Search by Title")
+        print("2. Search by Ingredients")
+        selected_search = int(input("\nWhat would you like to do? : "))
+
+        if selected_search == 1:
+            core_functions.search_recipe_titles(recipe_list)
+        else:
+            core_functions.search_recipe_ingredients(recipe_list)
+
+        print("\nOptions: ")
+        print("1. Search more recipes")
+        print("2. Back to Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        if selected_option == 2:
+            back_to_main_menu = True
