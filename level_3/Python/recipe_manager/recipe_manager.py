@@ -5,7 +5,10 @@ from core_functions import load_recipes, view_recipes, save_recipes
 from recipe import Recipe
 import menus
 
-
+# ToDo Input validation
+# Todo Error handling
+# ToDo Make sure an option to go back to main menu is present wherever it needs to be
+# Todo make sure there is even spacing between everything going on in the console
 def main():
     recipe_list = list()
     load_recipes(recipe_list)

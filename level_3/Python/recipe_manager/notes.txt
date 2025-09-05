@@ -38,6 +38,15 @@ Adding ingredients / instructions before or after certain elements already in th
 quality of life change I feel like it would not add much to the project and the current editing functionality fulfils
 the requirement of the project spec.
 
+Making it so after searching for recipes the user can select one and perform operations on them.
+Currently the search recipes by title or ingredients functions only return the list of results without allowing the
+user to select any of the recipes in the resulting list and perform operations on them. It would make sense if the
+user could perform operations on them but the current implementation of those functions fulfils the requirements of the
+project spec which were just for the ability to search through recipes by title or ingredient.
+
+Confirmation required when deleting recipes
+Good quality of life but I feel like I am starting to go out of scope of the project with this.
+
 
 Challenges faced:
 Reading data from file and transforming it into code

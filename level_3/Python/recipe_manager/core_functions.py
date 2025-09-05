@@ -36,7 +36,9 @@ def search_recipe_titles(recipe_list):
         if title.lower() in recipe.title.lower():
             result_list.append(recipe)
 
-    view_recipes(result_list)
+    # view_recipes(result_list)
+
+    return result_list
 
 
 def search_recipe_ingredients(recipe_list):
@@ -55,10 +57,16 @@ def search_recipe_ingredients(recipe_list):
         if any(filter(lambda recipe_ingredients_list: ingredient in recipe_ingredients_list, recipe_ingredients)):
             result_list.append(recipe)
 
-    view_recipes(result_list)
+    # view_recipes(result_list)
+
+    return result_list
 
 
 def delete_recipe(recipe_list, recipe_index):
+    recipe_title = recipe_list[recipe_index].title
+
+    print(f"\nRecipe {recipe_title} deleted")
+
     recipe_list.pop(recipe_index)
     view_recipes(recipe_list)
     # return recipe_list
@@ -100,3 +108,14 @@ def load_recipes(recipe_list):
                     recipe_list.append(recipe_load)
 
                 recipe_file.close()
+
+
+def find_recipe_index(recipe_list, recipe_title):
+    recipe_index = None
+
+    for recipe in recipe_list:
+        if recipe_title == recipe.title:
+            recipe_index = recipe_list.index(recipe)
+            break
+
+    return recipe_index

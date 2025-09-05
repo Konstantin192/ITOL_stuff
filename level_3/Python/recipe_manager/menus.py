@@ -92,6 +92,47 @@ def recipe_edit_menu(recipe_list):
             back_to_main_menu = True
 
 
+def recipe_edit_menu(recipe_list, recipe_index):
+    back_to_previous_menu = False
+
+    while not back_to_previous_menu:
+        # core_functions.view_recipes(recipe_list)
+        # selected_recipe = int(input("\nSelect recipe to edit: "))
+        # recipe_list[recipe_index].view_recipe_details()
+
+        print("Recipe edit options: ")
+        print("1. Change title")
+        print("2. Edit ingredients")
+        print("3. Edit instructions")
+        selected_edit = int(input("\nWhat would you like to do? : "))
+
+        # Why is index +1 here instead of -1 ? - In all other places where an index is used to get a specific recipe
+        # from a list they are  -1 because user selection is being translated to the corresponding list index. In this
+        # instance however the previously called "find_recipe_index" function has already gotten the translated index.
+        # As the below called function is also called by the original recipe_edit_menu function , which passes user
+        # inputs, it has to translate them to the corresponding list index which if done to the index being passed by
+        # the current function would mean that the list index would be 1 lower than it should be thus targeting a wrong
+        # recipe. Hence the +1 to counteract that.
+        recipe_edit_submenu(recipe_list, recipe_index + 1, selected_edit)
+
+        print("\nOptions: ")
+        print("1. Edit recipe further")
+        # print("2. Back to previous menu")
+        print("2. Back to Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        match selected_option:
+            case 1:
+                recipe_edit_menu(recipe_list, recipe_index)
+            # case 2:
+            #     back_to_previous_menu = True
+            case 2:
+                main_menu(recipe_list)
+
+        # if selected_option == 2:
+        #     back_to_previous_menu = True
+
+
 def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
     match selected_edit:
         # Change recipe title
@@ -158,14 +199,56 @@ def recipe_search_menu(recipe_list):
         selected_search = int(input("\nWhat would you like to do? : "))
 
         if selected_search == 1:
-            core_functions.search_recipe_titles(recipe_list)
+            result_list = core_functions.search_recipe_titles(recipe_list)
         else:
-            core_functions.search_recipe_ingredients(recipe_list)
+            result_list = core_functions.search_recipe_ingredients(recipe_list)
+
+        core_functions.view_recipes(result_list)
 
         print("\nOptions: ")
         print("1. Search more recipes")
-        print("2. Back to Main Menu")
+        print("2. View recipe details")
+        print("3. Back to Main Menu")
         selected_option = int(input("\nWhat would you like to do? : "))
 
-        if selected_option == 2:
-            back_to_main_menu = True
+        match selected_option:
+            case 1:
+                recipe_search_menu(result_list)
+            case 2:
+                selected_recipe = int(input("\nWhich recipe would you like to view? : "))
+                result_list[selected_recipe - 1].view_recipe_details()
+
+                recipe_title = result_list[selected_recipe - 1].title
+                recipe_search_submenu(recipe_list, recipe_title)
+            case 3:
+                back_to_main_menu = True
+
+
+def recipe_search_submenu(recipe_list, recipe_title):
+    back_to_previous_menu = False
+
+    while not back_to_previous_menu:
+        print("\nOptions: ")
+        print("1. Edit recipe")
+        print("2. Delete recipe")
+        print("3. Back to Previous Menu")
+        print("4. Back to Main Menu")
+        selected_option = int(input("\nWhat would you like to do? : "))
+
+        match selected_option:
+            case 1:
+                # selected_option = int(input("\nWhich recipe would you like to edit? : "))
+                # recipe_title = result_list[selected_option - 1].title()
+                recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
+                recipe_edit_menu(recipe_list, recipe_index)
+            case 2:
+                # selected_option = int(input("\nWhich recipe would you like to delete? : "))
+                # recipe_title = result_list[selected_option - 1].title()
+                recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
+                core_functions.delete_recipe(recipe_list, recipe_index)
+                back_to_previous_menu = True
+            case 3:
+                back_to_previous_menu = True
+            case 4:
+                main_menu(recipe_list)
+
