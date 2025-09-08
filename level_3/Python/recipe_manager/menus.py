@@ -91,17 +91,30 @@ def recipe_view_menu(recipe_list):
 
 def recipe_add_menu(recipe_list):
     back_to_main_menu = False
+    valid_inputs = [1, 2]
 
     while not back_to_main_menu:
         core_functions.add_recipe(recipe_list)
+        input_validated = False
 
-        print("\nOptions: ")
-        print("1. Add more Recipes")
-        print("2. Main Menu")
-        selected_option = int(input("\nWhat would you like to do? : "))
+        while not input_validated:
+            print("\nOptions: ")
+            print("1. Add more Recipes")
+            print("2. Main Menu")
+            selected_option = input("\nWhat would you like to do? : ")
+            selected_option_is_int = selected_option.isdigit()
 
-        if selected_option == 2:
-            back_to_main_menu = True
+            if selected_option_is_int:
+                selected_option = int(selected_option)
+
+            if selected_option in valid_inputs:
+                input_validated = True
+
+                if selected_option == 2:
+                    back_to_main_menu = True
+                    main_menu(recipe_list)
+            else:
+                print("\nInvalid input. Please try again.")
 
 
 def recipe_edit_menu(recipe_list):
