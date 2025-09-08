@@ -32,7 +32,7 @@ def main_menu(recipe_list):
                         recipe_add_menu(recipe_list)
                     # Edit recipes
                     case 3:
-                        recipe_edit_menu(recipe_list)
+                        recipe_edit_menu_list(recipe_list)
                     # Delete recipes
                     case 4:
                         recipe_delete_menu(recipe_list)
@@ -117,32 +117,82 @@ def recipe_add_menu(recipe_list):
                 print("\nInvalid input. Please try again.")
 
 
-def recipe_edit_menu(recipe_list):
+def recipe_edit_menu_list(recipe_list):
     back_to_main_menu = False
+    recipe_input_validated = False
+    edit_input_validated = False
+    valid_edit_inputs = [1, 2, 3]
+    options_input_validated = False
+    valid_options_inputs = [1, 2]
 
+    # Todo rethink whether I needs this while
     while not back_to_main_menu:
         core_functions.view_recipes(recipe_list)
-        selected_recipe = int(input("\nSelect recipe to edit: "))
-        recipe_list[selected_recipe - 1].view_recipe_details()
 
-        print("Recipe edit options: ")
+        while not recipe_input_validated:
+            selected_recipe = input("\nSelect recipe to edit: ")
+            selected_recipe_is_int = selected_recipe.isdigit()
+
+            # if selected_recipe_is_int and selected_recipe > 0 and selected_recipe <= len(recipe_list):
+            #     recipe_input_validated = True
+            #     selected_recipe = int(selected_recipe)
+            #     recipe_list[selected_recipe - 1].view_recipe_details()
+            # else:
+            #     print("\nInvalid input. Please try again.")
+
+            if selected_recipe_is_int:
+                selected_recipe = int(selected_recipe)
+                if selected_recipe > 0 and selected_recipe <= len(recipe_list):
+                    recipe_input_validated = True
+                    recipe_list[selected_recipe - 1].view_recipe_details()
+                else:
+                    print("\nInvalid input. Please try again.")
+            else:
+                print("\nInvalid input. Please try again.")
+
+
+        print("\nRecipe edit options: ")
         print("1. Change title")
         print("2. Edit ingredients")
         print("3. Edit instructions")
-        selected_edit = int(input("\nWhat would you like to do? : "))
 
-        recipe_edit_submenu(recipe_list, selected_recipe, selected_edit)
+        while not edit_input_validated:
+            selected_edit = input("\nWhat would you like to do? : ")
+            selected_edit_is_int = selected_edit.isdigit()
+
+            if selected_edit_is_int:
+                selected_edit = int(selected_edit)
+
+            if selected_edit in valid_edit_inputs:
+                edit_input_validated = True
+                recipe_edit_submenu(recipe_list, selected_recipe, selected_edit)
+            else:
+                print("\nInvalid input. Please try again.")
 
         print("\nOptions: ")
         print("1. Edit more recipes")
         print("2. Main Menu")
-        selected_option = int(input("\nWhat would you like to do? : "))
 
-        if selected_option == 2:
-            back_to_main_menu = True
+        while not options_input_validated:
+            selected_option = input("\nWhat would you like to do? : ")
+            selected_option_is_int = selected_option.isdigit()
+
+            if selected_option_is_int:
+                selected_option = int(selected_option)
+
+            if selected_option in valid_options_inputs:
+                options_input_validated = True
+
+                if selected_option == 1:
+                    recipe_edit_menu_list(recipe_list)
+                else:
+                    back_to_main_menu = True
+                    main_menu(recipe_list)
+            else:
+                print("\nInvalid input. Please try again.")
 
 
-def recipe_edit_menu(recipe_list, recipe_index):
+def recipe_edit_menu_direct(recipe_list, recipe_index):
     back_to_previous_menu = False
 
     while not back_to_previous_menu:
@@ -150,7 +200,7 @@ def recipe_edit_menu(recipe_list, recipe_index):
         # selected_recipe = int(input("\nSelect recipe to edit: "))
         # recipe_list[recipe_index].view_recipe_details()
 
-        print("Recipe edit options: ")
+        print("\nRecipe edit options: ")
         print("1. Change title")
         print("2. Edit ingredients")
         print("3. Edit instructions")
@@ -173,7 +223,7 @@ def recipe_edit_menu(recipe_list, recipe_index):
 
         match selected_option:
             case 1:
-                recipe_edit_menu(recipe_list, recipe_index)
+                recipe_edit_menu_direct(recipe_list, recipe_index)
             # case 2:
             #     back_to_previous_menu = True
             case 2:
@@ -290,7 +340,7 @@ def recipe_search_submenu(recipe_list, recipe_title):
                 # selected_option = int(input("\nWhich recipe would you like to edit? : "))
                 # recipe_title = result_list[selected_option - 1].title()
                 recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-                recipe_edit_menu(recipe_list, recipe_index)
+                recipe_edit_menu_direct(recipe_list, recipe_index)
             case 2:
                 # selected_option = int(input("\nWhich recipe would you like to delete? : "))
                 # recipe_title = result_list[selected_option - 1].title()

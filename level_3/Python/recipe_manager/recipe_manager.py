@@ -6,6 +6,7 @@ from recipe import Recipe
 import menus
 
 # ToDo Input validation
+# ToDo review all back to main menu while loops in menus
 # Todo Error handling
 # ToDo Make sure an option to go back to main menu is present wherever it needs to be
 # Todo make sure there is even spacing between everything going on in the console
