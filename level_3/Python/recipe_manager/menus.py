@@ -2,6 +2,8 @@ import core_functions
 
 def main_menu(recipe_list):
     application_exit = False
+    valid_inputs = [1, 2, 3, 4, 5, 0]
+    input_validated = False
 
     while not application_exit:
         print("\nWelcome to Recipe Manager")
@@ -12,44 +14,79 @@ def main_menu(recipe_list):
         print("5. Search Recipes")
         print("0. Exit")
 
-        option_selected = int(input("\nWhat would you like to do? : "))
+        while not input_validated:
+            option_selected = input("\nWhat would you like to do? : ")
+            input_is_int = option_selected.isdigit()
 
-        match option_selected:
-            # View recipes
-            case 1:
-                recipe_view_menu(recipe_list)
-            # Add recipes
-            case 2:
-                recipe_add_menu(recipe_list)
-            # Edit recipes
-            case 3:
-                recipe_edit_menu(recipe_list)
-            # Delete recipes
-            case 4:
-                recipe_delete_menu(recipe_list)
-            # Search recipes
-            case 5:
-                recipe_search_menu(recipe_list)
-            # Exit
-            case 0:
-                application_exit = True
+            if input_is_int:
+                option_selected = int(option_selected)
+
+            if option_selected in valid_inputs:
+                input_validated = True
+                match option_selected:
+                    # View recipes
+                    case 1:
+                        recipe_view_menu(recipe_list)
+                    # Add recipes
+                    case 2:
+                        recipe_add_menu(recipe_list)
+                    # Edit recipes
+                    case 3:
+                        recipe_edit_menu(recipe_list)
+                    # Delete recipes
+                    case 4:
+                        recipe_delete_menu(recipe_list)
+                    # Search recipes
+                    case 5:
+                        recipe_search_menu(recipe_list)
+                    # Exit
+                    case 0:
+                        application_exit = True
+            else:
+                print("\nInvalid input. Please try again.")
 
 
 def recipe_view_menu(recipe_list):
     back_to_main_menu = False;
+    valid_menu_inputs = [1, 2]
 
     while not back_to_main_menu:
+        menu_input_validated = False
+        recipe_input_validated = False
         core_functions.view_recipes(recipe_list)
-        selected_recipe = int(input("\nSelect recipe to view: "))
-        recipe_list[selected_recipe - 1].view_recipe_details()
 
-        print("\nOptions: ")
-        print("1. View more Recipes")
-        print("2. Back to Main Menu")
-        option_select = int(input("\nWhat would you like to do? : "))
+        while not recipe_input_validated:
+            selected_recipe = input("\nSelect recipe to view: ")
+            selected_recipe_is_int = selected_recipe.isdigit()
 
-        if option_select == 2:
-            back_to_main_menu = True
+            if selected_recipe_is_int:
+                selected_recipe = int(selected_recipe)
+                if selected_recipe > 0 and selected_recipe <= len(recipe_list):
+                    recipe_input_validated = True
+                    recipe_list[selected_recipe - 1].view_recipe_details()
+                else:
+                    print("\nInvalid input. Please try again.")
+            else:
+                print("\nInvalid input. Please try again.")
+
+        while not menu_input_validated:
+            print("\nOptions: ")
+            print("1. View more Recipes")
+            print("2. Back to Main Menu")
+            option_select = input("\nWhat would you like to do? : ")
+            option_select_is_int = option_select.isdigit()
+
+            if option_select_is_int:
+                option_select = int(option_select)
+
+            if option_select in valid_menu_inputs:
+                menu_input_validated = True
+
+                if option_select == 2:
+                    back_to_main_menu = True
+                    main_menu(recipe_list)
+            else:
+                print("\nInvalid input. Please try again.")
 
 
 def recipe_add_menu(recipe_list):
