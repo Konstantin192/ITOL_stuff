@@ -37,18 +37,35 @@ class Recipe:
 
 
     def add_ingredients(self):
+        valid_inputs = [1, 2]
+
         print("Current ingredient list: ")
         self.view_ingredients()
-        add_more_ingredients = 1
+        add_more_ingredients = True
 
-        while add_more_ingredients == 1:
+        while add_more_ingredients:
             new_ingredient = input("Enter new ingredient: ")
             self.ingredients_list.append(new_ingredient)
 
             print("New ingredient list: ")
             self.view_ingredients()
 
-            add_more_ingredients = int(input("Would you like to add another ingredient?: \n1. Yes \n2. No \n"))
+            input_validated = False
+
+            while not input_validated:
+                user_input = input("\nWould you like to add another ingredient ? : \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    input_validated = True
+
+                    if user_input == 2:
+                        add_more_ingredients = False
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
     def remove_ingredients(self):

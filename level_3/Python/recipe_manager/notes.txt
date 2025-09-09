@@ -26,8 +26,6 @@ If the edit and delete options were at the recipe details level the user would h
 as the details of the recipe would be right there as opposed to having to navigate several other menus to get to them.
 
 
-
-
 Assumptions made:
 The user will not intentionally alter the contents of the text file storing the recipe list in an attempt to break the
 application
@@ -38,14 +36,13 @@ Adding ingredients / instructions before or after certain elements already in th
 quality of life change I feel like it would not add much to the project and the current editing functionality fulfils
 the requirement of the project spec.
 
-Making it so after searching for recipes the user can select one and perform operations on them.
-Currently the search recipes by title or ingredients functions only return the list of results without allowing the
-user to select any of the recipes in the resulting list and perform operations on them. It would make sense if the
-user could perform operations on them but the current implementation of those functions fulfils the requirements of the
-project spec which were just for the ability to search through recipes by title or ingredient.
-
 Confirmation required when deleting recipes
 Good quality of life but I feel like I am starting to go out of scope of the project with this.
+
+Putting input validations into their own functions
+Turns out this doesn't actually shorten the code almost at all, also I don't want to go through all that testing again
+if I were to make their own functions and have to replace the existing validations. Would be a good addition if I have
+the time to spare as it is better code quality to make reused code into functions.
 
 
 Challenges faced:
