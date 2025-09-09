@@ -117,6 +117,7 @@ def recipe_add_menu(recipe_list):
                 print("\nInvalid input. Please try again.")
 
 
+# This menu is used for editing recipes when the user is presented with the list of all recipes and has to select one
 def recipe_edit_menu_list(recipe_list):
     back_to_main_menu = False
     recipe_input_validated = False
@@ -133,13 +134,6 @@ def recipe_edit_menu_list(recipe_list):
             selected_recipe = input("\nSelect recipe to edit: ")
             selected_recipe_is_int = selected_recipe.isdigit()
 
-            # if selected_recipe_is_int and selected_recipe > 0 and selected_recipe <= len(recipe_list):
-            #     recipe_input_validated = True
-            #     selected_recipe = int(selected_recipe)
-            #     recipe_list[selected_recipe - 1].view_recipe_details()
-            # else:
-            #     print("\nInvalid input. Please try again.")
-
             if selected_recipe_is_int:
                 selected_recipe = int(selected_recipe)
                 if selected_recipe > 0 and selected_recipe <= len(recipe_list):
@@ -149,7 +143,6 @@ def recipe_edit_menu_list(recipe_list):
                     print("\nInvalid input. Please try again.")
             else:
                 print("\nInvalid input. Please try again.")
-
 
         print("\nRecipe edit options: ")
         print("1. Change title")
@@ -192,45 +185,61 @@ def recipe_edit_menu_list(recipe_list):
                 print("\nInvalid input. Please try again.")
 
 
+# This menu is used to edit a recipe when the user is currently viewing the full details of that recipe after a search
 def recipe_edit_menu_direct(recipe_list, recipe_index):
     back_to_previous_menu = False
+    edit_input_validated = False
+    valid_edit_inputs = [1, 2, 3]
+    options_input_validated = False
+    valid_options_inputs = [1, 2]
 
     while not back_to_previous_menu:
-        # core_functions.view_recipes(recipe_list)
-        # selected_recipe = int(input("\nSelect recipe to edit: "))
-        # recipe_list[recipe_index].view_recipe_details()
-
         print("\nRecipe edit options: ")
         print("1. Change title")
         print("2. Edit ingredients")
         print("3. Edit instructions")
-        selected_edit = int(input("\nWhat would you like to do? : "))
 
-        # Why is index +1 here instead of -1 ? - In all other places where an index is used to get a specific recipe
-        # from a list they are  -1 because user selection is being translated to the corresponding list index. In this
-        # instance however the previously called "find_recipe_index" function has already gotten the translated index.
-        # As the below called function is also called by the original recipe_edit_menu function , which passes user
-        # inputs, it has to translate them to the corresponding list index which if done to the index being passed by
-        # the current function would mean that the list index would be 1 lower than it should be thus targeting a wrong
-        # recipe. Hence the +1 to counteract that.
-        recipe_edit_submenu(recipe_list, recipe_index + 1, selected_edit)
+        while not edit_input_validated:
+            selected_edit = input("\nWhat would you like to do? : ")
+            selected_edit_is_int = selected_edit.isdigit()
+
+            if selected_edit_is_int:
+                selected_edit = int(selected_edit)
+
+            if selected_edit in valid_edit_inputs:
+                edit_input_validated = True
+                # Why is index +1 here instead of -1 ? - In all other places where an index is used to get a specific
+                # recipe from a list they are  -1 because user selection is being translated to the corresponding list
+                # index. In this instance however the previously called "find_recipe_index" function has already gotten
+                # the translated index. As the below called function is also called by the original recipe_edit_menu
+                # function , which passes user inputs, it has to translate them to the corresponding list index which if
+                # done to the index being passed by the current function would mean that the list index would be 1 lower
+                # than it should be thus targeting a wrong recipe. Hence the +1 to counteract that.
+                recipe_edit_submenu(recipe_list, recipe_index + 1, selected_edit)
+            else:
+                print("\nInvalid input. Please try again.")
 
         print("\nOptions: ")
         print("1. Edit recipe further")
-        # print("2. Back to previous menu")
         print("2. Back to Main Menu")
-        selected_option = int(input("\nWhat would you like to do? : "))
 
-        match selected_option:
-            case 1:
-                recipe_edit_menu_direct(recipe_list, recipe_index)
-            # case 2:
-            #     back_to_previous_menu = True
-            case 2:
-                main_menu(recipe_list)
+        while not options_input_validated:
+            selected_option = input("\nWhat would you like to do? : ")
+            selected_option_is_int = selected_option.isdigit()
 
-        # if selected_option == 2:
-        #     back_to_previous_menu = True
+            if selected_option_is_int:
+                selected_option = int(selected_option)
+
+            if selected_option in valid_options_inputs:
+                options_input_validated = True
+
+                if selected_option == 1:
+                    recipe_edit_menu_direct(recipe_list, recipe_index)
+                else:
+                    back_to_previous_menu = True
+                    main_menu(recipe_list)
+            else:
+                print("\nInvalid input. Please try again.")
 
 
 def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
