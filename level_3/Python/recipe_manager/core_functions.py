@@ -25,8 +25,6 @@ def view_recipes(recipe_list):
     for recipe in recipe_list:
         print(f"{(recipe_list.index(recipe) + 1)}. {recipe.title}")
 
-    print() # Purely to make console more readable
-
 
 def search_recipe_titles(recipe_list):
     result_list = list()
