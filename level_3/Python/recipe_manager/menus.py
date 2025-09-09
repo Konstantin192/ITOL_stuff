@@ -222,6 +222,8 @@ def recipe_edit_menu_direct(recipe_list, recipe_index):
         print("\nOptions: ")
         print("1. Edit recipe further")
         print("2. Back to Main Menu")
+        # In order to implement this I have to make it so the recipe list is updated after every change
+        # print("3. Back to search submenu")
 
         while not options_input_validated:
             selected_option = input("\nWhat would you like to do? : ")
@@ -416,7 +418,7 @@ def recipe_search_menu(recipe_list):
                                     result_list[selected_recipe - 1].view_recipe_details()
 
                                     recipe_title = result_list[selected_recipe - 1].title
-                                    recipe_search_submenu(result_list, recipe_title)
+                                    recipe_search_submenu(recipe_list, recipe_title)
                                 else:
                                     print("\nInvalid input. Please try again.")
                             else:
@@ -430,29 +432,45 @@ def recipe_search_menu(recipe_list):
 
 def recipe_search_submenu(recipe_list, recipe_title):
     back_to_previous_menu = False
+    back_to_main_menu = False
+    options_input_validated = False
+    valid_options_inputs = [1, 2, 3, 4]
 
-    while not back_to_previous_menu:
+    while not back_to_previous_menu and not back_to_main_menu:
         print("\nOptions: ")
         print("1. Edit recipe")
         print("2. Delete recipe")
-        print("3. Back to Previous Menu")
+        print("3. Back to Search Menu")
         print("4. Back to Main Menu")
-        selected_option = int(input("\nWhat would you like to do? : "))
 
-        match selected_option:
-            case 1:
-                # selected_option = int(input("\nWhich recipe would you like to edit? : "))
-                # recipe_title = result_list[selected_option - 1].title()
-                recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-                recipe_edit_menu_direct(recipe_list, recipe_index)
-            case 2:
-                # selected_option = int(input("\nWhich recipe would you like to delete? : "))
-                # recipe_title = result_list[selected_option - 1].title()
-                recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-                core_functions.delete_recipe(recipe_list, recipe_index)
-                back_to_previous_menu = True
-            case 3:
-                back_to_previous_menu = True
-            case 4:
-                main_menu(recipe_list)
+        while not options_input_validated:
+            selected_option = input("\nWhat would you like to do? : ")
+            selected_option_is_int = selected_option.isdigit()
 
+            if selected_option_is_int:
+                selected_option = int(selected_option)
+
+            if selected_option in valid_options_inputs:
+                options_input_validated = True
+
+                match selected_option:
+                    case 1:
+                        # selected_option = int(input("\nWhich recipe would you like to edit? : "))
+                        # recipe_title = result_list[selected_option - 1].title()
+                        recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
+                        recipe_edit_menu_direct(recipe_list, recipe_index)
+                    case 2:
+                        # selected_option = int(input("\nWhich recipe would you like to delete? : "))
+                        # recipe_title = result_list[selected_option - 1].title()
+                        recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
+                        core_functions.delete_recipe(recipe_list, recipe_index)
+                        back_to_previous_menu = True
+                        recipe_search_menu(recipe_list)
+                    case 3:
+                        back_to_previous_menu = True
+                        recipe_search_menu(recipe_list)
+                    case 4:
+                        back_to_previous_menu = True
+                        main_menu(recipe_list)
+            else:
+                print("\nInvalid input. Please try again.")
