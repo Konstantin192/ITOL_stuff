@@ -243,6 +243,10 @@ def recipe_edit_menu_direct(recipe_list, recipe_index):
 
 
 def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
+    ingredient_edit_input_validated = False
+    instructions_edit_input_validated = False
+    valid_edit_inputs = [1, 2, 3]
+
     match selected_edit:
         # Change recipe title
         case 1:
@@ -253,30 +257,52 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
             print("1. Add ingredients")
             print("2. Remove ingredients")
             print("3. Change ingredients")
-            selected_ingredient_edit = int(input("\nWhat would you like to do? : "))
 
-            match selected_ingredient_edit:
-                case 1:
-                    recipe_list[selected_recipe - 1].add_ingredients()
-                case 2:
-                    recipe_list[selected_recipe - 1].remove_ingredients()
-                case 3:
-                    recipe_list[selected_recipe - 1].change_ingredients()
+            while not ingredient_edit_input_validated:
+                selected_ingredient_edit = input("\nWhat would you like to do? : ")
+                selected_ingredient_edit_is_int = selected_ingredient_edit.isdigit()
+
+                if selected_ingredient_edit_is_int:
+                    selected_ingredient_edit = int(selected_ingredient_edit)
+
+                if selected_ingredient_edit in valid_edit_inputs:
+                    ingredient_edit_input_validated = True
+
+                    match selected_ingredient_edit:
+                        case 1:
+                            recipe_list[selected_recipe - 1].add_ingredients()
+                        case 2:
+                            recipe_list[selected_recipe - 1].remove_ingredients()
+                        case 3:
+                            recipe_list[selected_recipe - 1].change_ingredients()
+                else:
+                    print("\nInvalid input. Please try again.")
         # Edit recipe instructions
         case 3:
             print("\nInstruction edit options:")
             print("1. Add instructions")
             print("2. Remove instructions")
             print("3. Change instructions")
-            selected_instruction_edit = int(input("\nWhat would you like to do? : "))
 
-            match selected_instruction_edit:
-                case 1:
-                    recipe_list[selected_recipe - 1].add_instructions()
-                case 2:
-                    recipe_list[selected_recipe - 1].remove_instructions()
-                case 3:
-                    recipe_list[selected_recipe - 1].change_instructions()
+            while not instructions_edit_input_validated:
+                selected_instruction_edit = input("\nWhat would you like to do? : ")
+                selected_instruction_edit_is_int = selected_instruction_edit.isdigit()
+
+                if selected_instruction_edit_is_int:
+                    selected_instruction_edit = int(selected_instruction_edit)
+
+                if selected_instruction_edit in valid_edit_inputs:
+                    instructions_edit_input_validated = True
+
+                    match selected_instruction_edit:
+                        case 1:
+                            recipe_list[selected_recipe - 1].add_instructions()
+                        case 2:
+                            recipe_list[selected_recipe - 1].remove_instructions()
+                        case 3:
+                            recipe_list[selected_recipe - 1].change_instructions()
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
 def recipe_delete_menu(recipe_list):

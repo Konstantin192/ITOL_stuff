@@ -11,6 +11,7 @@ import menus
 # ToDo Make sure an option to go back to main menu is present wherever it needs to be
 # Todo make sure there is even spacing between everything going on in the console
 # Todo make sure all code follows the same logic for error input - either repeat menu after invalid input OR don't
+# Todo decide whether to keep saving changes to the list only on app exit or update saved list after every change
 def main():
     recipe_list = list()
     load_recipes(recipe_list)
