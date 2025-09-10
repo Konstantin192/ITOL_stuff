@@ -69,9 +69,11 @@ class Recipe:
 
 
     def remove_ingredients(self):
+        valid_inputs = [1, 2]
+
         print("Current ingredient list: ")
         self.view_ingredients()
-        remove_more_ingredients = 1
+        remove_more_ingredients = True
 
         while remove_more_ingredients == 1:
             ingredient_to_remove = int(input("Enter index of ingredient to remove: "))
@@ -80,7 +82,22 @@ class Recipe:
             print("New ingredient list: ")
             self.view_ingredients()
 
-            remove_more_ingredients = int(input("Would you like to remove another ingredient?: \n1. Yes \n2. No \n"))
+            input_validated = False
+
+            while not input_validated:
+                user_input = input("Would you like to remove another ingredient?: \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    input_validated = True
+
+                    if user_input == 2:
+                        remove_more_ingredients = False
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
     def change_ingredients(self):
