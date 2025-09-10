@@ -246,17 +246,46 @@ class Recipe:
 
 
     def change_instructions(self):
-        print("Current instruction list: ")
+        valid_inputs = [1, 2]
+
+        print("\nCurrent instruction list: ")
         self.view_instructions()
-        change_more_instructions = 1
+        change_more_instructions = True
 
-        while change_more_instructions == 1:
-            selected_instruction = input("Select index of instruction to change: ")
-            new_instruction = input("Enter new instruction: ")
+        while change_more_instructions:
+            instruction_input_validated = False
+            user_input_validated = False
 
-            self.instructions[int(selected_instruction) - 1] = new_instruction
+            while not instruction_input_validated:
+                selected_instruction = input("\nSelect index of instruction to change: ")
+                selected_instruction_is_int = selected_instruction.isdigit()
 
-            print("New instruction list:")
-            self.view_instructions()
+                if selected_instruction_is_int:
+                    selected_instruction = int(selected_instruction)
 
-            change_more_instructions = int(input("Would you like to change another instruction?: \n1. Yes \n2. No \n"))
+                    if selected_instruction > 0 and selected_instruction <= len(self.instructions):
+                        instruction_input_validated = True
+
+                        new_instruction = input("\nEnter new instruction: ")
+                        self.instructions[int(selected_instruction) - 1] = new_instruction
+                        print("\nNew instruction list:")
+                        self.view_instructions()
+                    else:
+                        print("\nInvalid input. Please try again.")
+                else:
+                    print("\nInvalid input. Please try again.")
+
+            while not user_input_validated:
+                user_input = input("\nWould you like to change another instruction?: \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    user_input_validated = True
+
+                    if user_input == 2:
+                        change_more_instructions = False
+                else:
+                    print("\nInvalid input. Please try again.")
