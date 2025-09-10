@@ -158,18 +158,35 @@ class Recipe:
 
 
     def add_instructions(self):
+        valid_inputs = [1, 2]
+
         print("Current instruction list: ")
         self.view_instructions()
-        add_more_instructions = 1
+        add_more_instructions = True
 
-        while add_more_instructions == 1:
+        while add_more_instructions:
             new_instruction = input("Enter new instruction: ")
             self.instructions.append(new_instruction)
 
             print("New instruction list: ")
             self.view_instructions()
 
-            add_more_instructions = int(input("Would you like to add another instruction?: \n1. Yes \n2. No \n"))
+            input_validated = False
+
+            while not input_validated:
+                user_input = input("Would you like to add another instruction?: \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    input_validated = True
+
+                    if user_input == 2:
+                        add_more_instructions = False
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
     def remove_instructions(self):
