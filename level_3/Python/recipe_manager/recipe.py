@@ -76,13 +76,25 @@ class Recipe:
         remove_more_ingredients = True
 
         while remove_more_ingredients:
-            ingredient_to_remove = int(input("Enter index of ingredient to remove: "))
-            self.ingredients_list.pop(ingredient_to_remove - 1)
-
-            print("New ingredient list: ")
-            self.view_ingredients()
-
+            ingredient_input_validated = False
             input_validated = False
+
+            while not ingredient_input_validated:
+                ingredient_to_remove = input("Enter index of ingredient to remove: ")
+                ingredient_to_remove_is_int = ingredient_to_remove.isdigit()
+
+                if ingredient_to_remove_is_int:
+                    ingredient_to_remove = int(ingredient_to_remove)
+
+                    if ingredient_to_remove > 0 and ingredient_to_remove < len(self.ingredients_list):
+                        ingredient_input_validated = True
+                        self.ingredients_list.pop(ingredient_to_remove - 1)
+                        print("New ingredient list: ")
+                        self.view_ingredients()
+                    else:
+                        print("\nInvalid input. Please try again.")
+                else:
+                    print("\nInvalid input. Please try again.")
 
             while not input_validated:
                 user_input = input("Would you like to remove another ingredient?: \n1. Yes \n2. No \n")
