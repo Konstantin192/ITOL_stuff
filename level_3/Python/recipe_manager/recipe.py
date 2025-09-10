@@ -101,20 +101,51 @@ class Recipe:
 
 
     def change_ingredients(self):
+        valid_inputs = [1, 2]
+
         print("Current ingredient list: ")
         self.view_ingredients()
-        change_more_ingredients = 1
+        change_more_ingredients = True
 
-        while change_more_ingredients == 1:
-            selected_ingredient = input("Select index of ingredient to change: ")
-            new_ingredient = input("Enter new ingredient: ")
+        while change_more_ingredients:
+            ingredient_input_validated = False
+            user_input_validated = False
+
+            while not ingredient_input_validated:
+                selected_ingredient = input("\nSelect index of ingredient to change: ")
+                selected_ingredient_is_int = (selected_ingredient).isdigit()
+
+                if selected_ingredient_is_int:
+                    selected_ingredient = int(selected_ingredient)
+
+                    if selected_ingredient > 0 and selected_ingredient <= len(self.ingredients_list):
+                        ingredient_input_validated = True
+                    else:
+                        print("\nInvalid input. Please try again.")
+                else:
+                    print("\nInvalid input. Please try again.")
+
+            new_ingredient = input("\nEnter new ingredient: ")
 
             self.ingredients_list[int(selected_ingredient) - 1] = new_ingredient
 
-            print("New ingredient list:")
+            print("\nNew ingredient list:")
             self.view_ingredients()
 
-            change_more_ingredients = int(input("Would you like to change another ingredient?: \n1. Yes \n2. No \n"))
+            while not user_input_validated:
+                user_input = input("\nWould you like to change another ingredient?: \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    user_input_validated = True
+
+                    if user_input == 2:
+                        change_more_ingredients = False
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
     def view_instructions(self):
