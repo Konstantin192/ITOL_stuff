@@ -75,7 +75,7 @@ class Recipe:
         self.view_ingredients()
         remove_more_ingredients = True
 
-        while remove_more_ingredients == 1:
+        while remove_more_ingredients:
             ingredient_to_remove = int(input("Enter index of ingredient to remove: "))
             self.ingredients_list.pop(ingredient_to_remove - 1)
 
@@ -190,18 +190,47 @@ class Recipe:
 
 
     def remove_instructions(self):
+        valid_inputs = [1, 2]
+
         print("Current instruction list: ")
         self.view_instructions()
-        remove_more_instructions = 1
+        remove_more_instructions = True
 
-        while remove_more_instructions == 1:
-            instruction_to_remove = int(input("Enter index of instruction to remove: "))
-            self.instructions.pop(instruction_to_remove - 1
-                                  )
-            print("New instruction list: ")
-            self.view_instructions()
+        while remove_more_instructions:
+            instruction_input_validated = False
+            input_validated = False
 
-            remove_more_instructions = int(input("Would you like to remove another instruction?: \n1. Yes \n2. No \n"))
+            while not instruction_input_validated:
+                instruction_to_remove = input("Enter index of instruction to remove: ")
+                instruction_to_remove_is_int = instruction_to_remove.isdigit()
+
+                if instruction_to_remove_is_int:
+                    instruction_to_remove = int(instruction_to_remove)
+
+                    if instruction_to_remove > 0 and instruction_to_remove <= len(self.instructions):
+                        instruction_input_validated = True
+                        self.instructions.pop(instruction_to_remove - 1)
+                        print("New instruction list: ")
+                        self.view_instructions()
+                    else:
+                        print("\nInvalid input. Please try again.")
+                else:
+                    print("\nInvalid input. Please try again.")
+
+            while not input_validated:
+                user_input = input("Would you like to remove another instruction?: \n1. Yes \n2. No \n")
+                user_input_is_int = user_input.isdigit()
+
+                if user_input_is_int:
+                    user_input = int(user_input)
+
+                if user_input in valid_inputs:
+                    input_validated = True
+
+                    if user_input == 2:
+                        remove_more_instructions = False
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
     def change_instructions(self):
