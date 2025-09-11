@@ -56,15 +56,11 @@ def recipe_view_menu(recipe_list):
 
         while not recipe_input_validated:
             selected_recipe = input("\nSelect recipe to view: ")
-            selected_recipe_is_int = selected_recipe.isdigit()
 
-            if selected_recipe_is_int:
-                selected_recipe = int(selected_recipe)
-                if selected_recipe > 0 and selected_recipe <= len(recipe_list):
-                    recipe_input_validated = True
-                    recipe_list[selected_recipe - 1].view_recipe_details()
-                else:
-                    print("\nInvalid input. Please try again.")
+            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
+
+            if recipe_input_validated:
+                recipe_list[int(selected_recipe) - 1].view_recipe_details()
             else:
                 print("\nInvalid input. Please try again.")
 
@@ -73,15 +69,11 @@ def recipe_view_menu(recipe_list):
             print("1. View more Recipes")
             print("2. Back to Main Menu")
             option_select = input("\nWhat would you like to do? : ")
-            option_select_is_int = option_select.isdigit()
 
-            if option_select_is_int:
-                option_select = int(option_select)
+            menu_input_validated = input_validation.menu_input_validation(option_select, valid_menu_inputs)
 
-            if option_select in valid_menu_inputs:
-                menu_input_validated = True
-
-                if option_select == 2:
+            if menu_input_validated:
+                if int(option_select) == 2:
                     back_to_main_menu = True
             else:
                 print("\nInvalid input. Please try again.")

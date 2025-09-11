@@ -10,3 +10,19 @@ def menu_input_validation(user_input, valid_inputs):
         input_validated = False
 
     return input_validated
+
+
+def recipe_input_validation(user_input, recipe_list):
+    user_input_is_int = user_input.isdigit()
+
+    if user_input_is_int:
+        user_input = int(user_input)
+
+        if user_input > 0 and user_input <= len(recipe_list):
+            input_validated = True
+        else:
+            input_validated = False
+    else:
+        input_validated = False
+
+    return input_validated
