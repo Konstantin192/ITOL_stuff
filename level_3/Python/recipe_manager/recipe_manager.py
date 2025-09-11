@@ -5,7 +5,6 @@ from core_functions import load_recipes, view_recipes, save_recipes
 from recipe import Recipe
 import menus
 
-# ToDo Input validation
 # Todo make functions for the input verifications ?
 # ToDo Handling for everything when the recipe list is empty
 # ToDo review all back to main menu while loops in menus / Am i continuously drilling down by calling main menu function at the end of a function ?

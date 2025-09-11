@@ -1,11 +1,13 @@
 import core_functions
+import input_validation
 
 def main_menu(recipe_list):
     application_exit = False
     valid_inputs = [1, 2, 3, 4, 5, 0]
-    input_validated = False
 
     while not application_exit:
+        input_validated = False
+
         print("\nWelcome to Recipe Manager")
         print("1. View Recipes")
         print("2. Add Recipes")
@@ -16,14 +18,11 @@ def main_menu(recipe_list):
 
         while not input_validated:
             option_selected = input("\nWhat would you like to do? : ")
-            input_is_int = option_selected.isdigit()
 
-            if input_is_int:
-                option_selected = int(option_selected)
+            input_validated = input_validation.menu_input_validation(option_selected, valid_inputs)
 
-            if option_selected in valid_inputs:
-                input_validated = True
-                match option_selected:
+            if input_validated:
+                match int(option_selected):
                     # View recipes
                     case 1:
                         recipe_view_menu(recipe_list)
@@ -84,7 +83,6 @@ def recipe_view_menu(recipe_list):
 
                 if option_select == 2:
                     back_to_main_menu = True
-                    main_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
 
