@@ -6,6 +6,7 @@ from recipe import Recipe
 import menus
 
 # Todo make functions for the input verifications ?
+# Todo figure out how control flow (e.g. returning to main menu) should work for drilled down functions
 # ToDo Handling for everything when the recipe list is empty
 # ToDo review all back to main menu while loops in menus / Am i continuously drilling down by calling main menu function at the end of a function ?
 # Todo Error handling
