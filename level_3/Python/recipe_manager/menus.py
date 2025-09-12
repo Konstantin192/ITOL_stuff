@@ -268,26 +268,21 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
 
 def recipe_delete_menu(recipe_list):
     back_to_main_menu = False
-    recipe_input_validated = False
-    options_input_validated = False
     valid_options_inputs = [1, 2]
 
     while not back_to_main_menu:
-        print("\nCurrent recipes")
+        recipe_input_validated = False
+        options_input_validated = False
+
         core_functions.view_recipes(recipe_list)
 
         while not recipe_input_validated:
             selected_recipe_delete = input("\nWhich recipe would you like to delete? : ")
-            selected_recipe_delete_is_int = selected_recipe_delete.isdigit()
 
-            if selected_recipe_delete_is_int:
-                selected_recipe_delete = int(selected_recipe_delete)
+            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe_delete, recipe_list)
 
-                if selected_recipe_delete > 0 and selected_recipe_delete <= len(recipe_list):
-                    recipe_input_validated = True
-                    core_functions.delete_recipe(recipe_list, selected_recipe_delete - 1)
-                else:
-                    print("\nInvalid input. Please try again.")
+            if recipe_input_validated:
+                core_functions.delete_recipe(recipe_list, int(selected_recipe_delete) - 1)
             else:
                 print("\nInvalid input. Please try again.")
 
@@ -297,21 +292,15 @@ def recipe_delete_menu(recipe_list):
 
         while not options_input_validated:
             selected_option = input("\nWhat would you like to do? : ")
-            selected_option_is_int = selected_option.isdigit()
 
-            if selected_option_is_int:
-                selected_option = int(selected_option)
+            options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
 
-            if selected_option in valid_options_inputs:
-                options_input_validated = True
-
-                if selected_option == 1:
-                    recipe_delete_menu(recipe_list)
-                else:
+            if options_input_validated:
+                if int(selected_option) == 2:
                     back_to_main_menu = True
-                    main_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
+
 
 def recipe_search_menu(recipe_list):
     back_to_main_menu = False
