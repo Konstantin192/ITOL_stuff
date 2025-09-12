@@ -105,27 +105,23 @@ def recipe_add_menu(recipe_list):
 # This menu is used for editing recipes when the user is presented with the list of all recipes and has to select one
 def recipe_edit_menu_list(recipe_list):
     back_to_main_menu = False
-    recipe_input_validated = False
-    edit_input_validated = False
     valid_edit_inputs = [1, 2, 3]
-    options_input_validated = False
     valid_options_inputs = [1, 2]
 
-    # Todo rethink whether I needs this while
     while not back_to_main_menu:
+        recipe_input_validated = False
+        edit_input_validated = False
+        options_input_validated = False
+
         core_functions.view_recipes(recipe_list)
 
         while not recipe_input_validated:
             selected_recipe = input("\nSelect recipe to edit: ")
-            selected_recipe_is_int = selected_recipe.isdigit()
 
-            if selected_recipe_is_int:
-                selected_recipe = int(selected_recipe)
-                if selected_recipe > 0 and selected_recipe <= len(recipe_list):
-                    recipe_input_validated = True
-                    recipe_list[selected_recipe - 1].view_recipe_details()
-                else:
-                    print("\nInvalid input. Please try again.")
+            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
+
+            if recipe_input_validated:
+                recipe_list[int(selected_recipe) - 1].view_recipe_details()
             else:
                 print("\nInvalid input. Please try again.")
 
@@ -136,14 +132,11 @@ def recipe_edit_menu_list(recipe_list):
 
         while not edit_input_validated:
             selected_edit = input("\nWhat would you like to do? : ")
-            selected_edit_is_int = selected_edit.isdigit()
 
-            if selected_edit_is_int:
-                selected_edit = int(selected_edit)
+            edit_input_validated = input_validation.menu_input_validation(selected_edit, valid_edit_inputs)
 
-            if selected_edit in valid_edit_inputs:
-                edit_input_validated = True
-                recipe_edit_submenu(recipe_list, selected_recipe, selected_edit)
+            if edit_input_validated:
+                recipe_edit_submenu(recipe_list, int(selected_recipe), int(selected_edit))
             else:
                 print("\nInvalid input. Please try again.")
 
@@ -153,19 +146,15 @@ def recipe_edit_menu_list(recipe_list):
 
         while not options_input_validated:
             selected_option = input("\nWhat would you like to do? : ")
-            selected_option_is_int = selected_option.isdigit()
 
-            if selected_option_is_int:
-                selected_option = int(selected_option)
+            options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
 
-            if selected_option in valid_options_inputs:
-                options_input_validated = True
-
-                if selected_option == 1:
+            if options_input_validated:
+                if int(selected_option) == 1:
                     recipe_edit_menu_list(recipe_list)
                 else:
+                    # ToDo Figure out how control flow should work here
                     back_to_main_menu = True
-                    main_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
 
