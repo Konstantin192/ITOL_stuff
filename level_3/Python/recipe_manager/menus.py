@@ -92,17 +92,12 @@ def recipe_add_menu(recipe_list):
             print("1. Add more Recipes")
             print("2. Main Menu")
             selected_option = input("\nWhat would you like to do? : ")
-            selected_option_is_int = selected_option.isdigit()
 
-            if selected_option_is_int:
-                selected_option = int(selected_option)
+            input_validated = input_validation.menu_input_validation(selected_option, valid_inputs)
 
-            if selected_option in valid_inputs:
-                input_validated = True
-
-                if selected_option == 2:
+            if input_validated:
+                if int(selected_option) == 2:
                     back_to_main_menu = True
-                    main_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
 
