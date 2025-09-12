@@ -228,15 +228,11 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
 
             while not ingredient_edit_input_validated:
                 selected_ingredient_edit = input("\nWhat would you like to do? : ")
-                selected_ingredient_edit_is_int = selected_ingredient_edit.isdigit()
 
-                if selected_ingredient_edit_is_int:
-                    selected_ingredient_edit = int(selected_ingredient_edit)
+                ingredient_edit_input_validated = input_validation.menu_input_validation(selected_ingredient_edit, valid_edit_inputs)
 
-                if selected_ingredient_edit in valid_edit_inputs:
-                    ingredient_edit_input_validated = True
-
-                    match selected_ingredient_edit:
+                if ingredient_edit_input_validated:
+                    match int(selected_ingredient_edit):
                         case 1:
                             recipe_list[selected_recipe - 1].add_ingredients()
                         case 2:
@@ -245,6 +241,7 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
                             recipe_list[selected_recipe - 1].change_ingredients()
                 else:
                     print("\nInvalid input. Please try again.")
+
         # Edit recipe instructions
         case 3:
             print("\nInstruction edit options:")
@@ -254,15 +251,11 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
 
             while not instructions_edit_input_validated:
                 selected_instruction_edit = input("\nWhat would you like to do? : ")
-                selected_instruction_edit_is_int = selected_instruction_edit.isdigit()
 
-                if selected_instruction_edit_is_int:
-                    selected_instruction_edit = int(selected_instruction_edit)
+                instructions_edit_input_validated = input_validation.menu_input_validation(selected_instruction_edit, valid_edit_inputs)
 
-                if selected_instruction_edit in valid_edit_inputs:
-                    instructions_edit_input_validated = True
-
-                    match selected_instruction_edit:
+                if instructions_edit_input_validated:
+                    match int(selected_instruction_edit):
                         case 1:
                             recipe_list[selected_recipe - 1].add_instructions()
                         case 2:
