@@ -53,6 +53,11 @@ Currently there are some menus that have the option to return to main menu and t
 which can only go to their previous menu, not main menu. This makes for an awkward control and while changing it would
 not be challenging it would still take a lot of time as essentially the whole application will need to be re-tested.
 
+Recipe list save to file after every change
+Currently the recipe list stored in the text file is only saved just before the application closes. This could result in
+change loss if the app unexpectedly crashes during a session. Changing this at this point would require lots of time as
+the whole application will need to be re-tested.
+
 
 Challenges faced:
 Reading data from file and transforming it into code

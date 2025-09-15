@@ -4,7 +4,7 @@ import json
 
 
 def add_recipe(recipe_list):
-    title = input("Enter recipe title: ")
+    title = input("\nEnter recipe title: ")
     ingredients = []
     instructions = []
 
@@ -15,7 +15,7 @@ def add_recipe(recipe_list):
 
     recipe_list.append(new_recipe)
 
-    print("Recipe added")
+    print("\nRecipe added")
     # return recipe_list
 
 
@@ -41,7 +41,7 @@ def search_recipe_titles(recipe_list):
 
 def search_recipe_ingredients(recipe_list):
     result_list = list()
-    ingredient = input("Enter ingredient name: ").lower()
+    ingredient = input("\nEnter ingredient name: ").lower()
 
     # for recipe in recipe_list:
     #     if ingredient.lower() in map(str.lower, recipe.ingredients_list):
