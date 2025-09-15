@@ -304,28 +304,25 @@ def recipe_delete_menu(recipe_list):
 
 def recipe_search_menu(recipe_list):
     back_to_main_menu = False
-    search_input_validated = False
     valid_search_inputs = [1, 2]
-    options_input_validated = False
     valid_options_inputs = [1, 2, 3]
-    recipe_input_validated = False
 
     while not back_to_main_menu:
+        search_input_validated = False
+        options_input_validated = False
+        recipe_input_validated = False
+
         print("\nRecipe search options: ")
         print("1. Search by Title")
         print("2. Search by Ingredients")
 
         while not search_input_validated:
             selected_search = input("\nWhat would you like to do? : ")
-            selected_search_is_int = selected_search.isdigit()
 
-            if selected_search_is_int:
-                selected_search = int(selected_search)
+            search_input_validated = input_validation.menu_input_validation(selected_search, valid_search_inputs)
 
-            if selected_search in valid_search_inputs:
-                search_input_validated = True
-
-                if selected_search == 1:
+            if search_input_validated:
+                if int(selected_search) == 1:
                     result_list = core_functions.search_recipe_titles(recipe_list)
                 else:
                     result_list = core_functions.search_recipe_ingredients(recipe_list)
@@ -341,13 +338,11 @@ def recipe_search_menu(recipe_list):
 
         while not options_input_validated:
             selected_option = input("\nWhat would you like to do? : ")
-            selected_option_is_int = selected_option.isdigit()
 
-            if selected_option_is_int:
+            options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
+
+            if options_input_validated:
                 selected_option = int(selected_option)
-
-            if selected_option in valid_options_inputs:
-                options_input_validated = True
 
                 match selected_option:
                     case 1:
@@ -355,25 +350,19 @@ def recipe_search_menu(recipe_list):
                     case 2:
                         while not recipe_input_validated:
                             selected_recipe = input("\nWhich recipe would you like to view? : ")
-                            selected_recipe_is_int = selected_recipe.isdigit()
 
-                            if selected_recipe_is_int:
-                                selected_recipe = int(selected_recipe)
+                            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, result_list)
 
-                                if selected_recipe > 0 and selected_recipe <= len(result_list):
-                                    recipe_input_validated = True
+                            if recipe_input_validated:
+                                result_list[int(selected_recipe) - 1].view_recipe_details()
 
-                                    result_list[selected_recipe - 1].view_recipe_details()
-
-                                    recipe_title = result_list[selected_recipe - 1].title
-                                    recipe_search_submenu(recipe_list, recipe_title)
-                                else:
-                                    print("\nInvalid input. Please try again.")
+                                recipe_title = result_list[int(selected_recipe) - 1].title
+                                recipe_search_submenu(recipe_list, recipe_title)
                             else:
                                 print("\nInvalid input. Please try again.")
+                    # ToDo review this control flow, currently this goes to the previous menu, the search menu, not the main menu
                     case 3:
                         back_to_main_menu = True
-                        main_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
 
