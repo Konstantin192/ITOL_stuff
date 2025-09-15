@@ -378,35 +378,6 @@ def recipe_search_submenu(recipe_list, recipe_title):
         print("2. Delete recipe")
         print("3. Back to Search Menu")
 
-        # while not options_input_validated:
-        #     selected_option = input("\nWhat would you like to do? : ")
-        #     selected_option_is_int = selected_option.isdigit()
-        #
-        #     if selected_option_is_int:
-        #         selected_option = int(selected_option)
-        #
-        #     if selected_option in valid_options_inputs:
-        #         options_input_validated = True
-        #
-        #         match selected_option:
-        #             case 1:
-        #                 # selected_option = int(input("\nWhich recipe would you like to edit? : "))
-        #                 # recipe_title = result_list[selected_option - 1].title()
-        #                 recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-        #                 recipe_edit_menu_direct(recipe_list, recipe_index)
-        #             case 2:
-        #                 # selected_option = int(input("\nWhich recipe would you like to delete? : "))
-        #                 # recipe_title = result_list[selected_option - 1].title()
-        #                 recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-        #                 core_functions.delete_recipe(recipe_list, recipe_index)
-        #                 back_to_previous_menu = True
-        #                 recipe_search_menu(recipe_list)
-        #             case 3:
-        #                 back_to_previous_menu = True
-        #                 recipe_search_menu(recipe_list)
-        #     else:
-        #         print("\nInvalid input. Please try again.")
-
         while not options_input_validated:
             selected_option = input("\nWhat would you like to do? : ")
 
@@ -422,35 +393,7 @@ def recipe_search_submenu(recipe_list, recipe_title):
                         recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
                         core_functions.delete_recipe(recipe_list, recipe_index)
                         back_to_previous_menu = True
-                        # recipe_search_menu(recipe_list)
                     case 3:
                         back_to_previous_menu = True
-                        # recipe_search_menu(recipe_list)
             else:
                 print("\nInvalid input. Please try again.")
-
-
-            # if selected_option_is_int:
-            #     selected_option = int(selected_option)
-            #
-            # if selected_option in valid_options_inputs:
-            #     options_input_validated = True
-            #
-            #     match selected_option:
-            #         case 1:
-            #             # selected_option = int(input("\nWhich recipe would you like to edit? : "))
-            #             # recipe_title = result_list[selected_option - 1].title()
-            #             recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-            #             recipe_edit_menu_direct(recipe_list, recipe_index)
-            #         case 2:
-            #             # selected_option = int(input("\nWhich recipe would you like to delete? : "))
-            #             # recipe_title = result_list[selected_option - 1].title()
-            #             recipe_index = core_functions.find_recipe_index(recipe_list, recipe_title)
-            #             core_functions.delete_recipe(recipe_list, recipe_index)
-            #             back_to_previous_menu = True
-            #             recipe_search_menu(recipe_list)
-            #         case 3:
-            #             back_to_previous_menu = True
-            #             recipe_search_menu(recipe_list)
-            # else:
-            #     print("\nInvalid input. Please try again.")

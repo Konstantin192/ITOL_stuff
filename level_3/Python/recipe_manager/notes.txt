@@ -37,12 +37,16 @@ quality of life change I feel like it would not add much to the project and the 
 the requirement of the project spec.
 
 Confirmation required when deleting recipes
-Good quality of life but I feel like I am starting to go out of scope of the project with this.
+Good quality of life, but I feel like I am starting to go out of scope of the project with this.
 
 Error handling - logging of full session details (how the user navigated the app, all of the questions they were asked
 along with how they responded.)
 This would be very useful for error handling as in addition to the stacktrace it would also provide the full recreation
 steps to those investigating.
+
+Regular expressions for validation of all string inputs.
+For a normal application regular expressions would be preferred for validation but as the project does not store data in
+a database this did not seem needed.
 
 
 Challenges faced:
@@ -50,5 +54,5 @@ Reading data from file and transforming it into code
 Checking if a substring is within the recipe ingredients list of each recipe within a Recipe object list
 
 Testing. So much testing.
-Application control flows are a nightmare in console apps. Automated testing could have helped lighten the burden, but I
-underestimated the size of the project so I did not make any.
+Application control flows are a nightmare in console apps, especially with nested menus. Automated testing could have
+helped lighten the burden, but I underestimated the size of the project, so I did not make any.

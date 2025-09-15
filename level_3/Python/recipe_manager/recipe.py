@@ -1,3 +1,5 @@
+import input_validation
+
 class Recipe:
     def __init__(self, title, ingredients_list, instructions):
         self.title = title
@@ -39,30 +41,26 @@ class Recipe:
     def add_ingredients(self):
         valid_inputs = [1, 2]
 
-        print("Current ingredient list: ")
+        print("\nCurrent ingredient list: ")
         self.view_ingredients()
         add_more_ingredients = True
 
         while add_more_ingredients:
-            new_ingredient = input("Enter new ingredient: ")
+            new_ingredient = input("\nEnter new ingredient: ")
             self.ingredients_list.append(new_ingredient)
 
-            print("New ingredient list: ")
+            print("\nNew ingredient list: ")
             self.view_ingredients()
 
             input_validated = False
 
             while not input_validated:
                 user_input = input("\nWould you like to add another ingredient ? : \n1. Yes \n2. No \n")
-                user_input_is_int = user_input.isdigit()
 
-                if user_input_is_int:
-                    user_input = int(user_input)
+                input_validated = input_validation.menu_input_validation(user_input, valid_inputs)
 
-                if user_input in valid_inputs:
-                    input_validated = True
-
-                    if user_input == 2:
+                if input_validated:
+                    if int(user_input) == 2:
                         add_more_ingredients = False
                 else:
                     print("\nInvalid input. Please try again.")
