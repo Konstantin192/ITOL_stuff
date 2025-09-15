@@ -345,8 +345,6 @@ def recipe_search_menu(recipe_list):
                 selected_option = int(selected_option)
 
                 match selected_option:
-                    case 1:
-                        recipe_search_menu(result_list)
                     case 2:
                         while not recipe_input_validated:
                             selected_recipe = input("\nWhich recipe would you like to view? : ")
