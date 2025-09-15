@@ -48,3 +48,7 @@ steps to those investigating.
 Challenges faced:
 Reading data from file and transforming it into code
 Checking if a substring is within the recipe ingredients list of each recipe within a Recipe object list
+
+Testing. So much testing.
+Application control flows are a nightmare in console apps. Automated testing could have helped lighten the burden, but I
+underestimated the size of the project so I did not make any.
