@@ -69,7 +69,7 @@ class Recipe:
     def remove_ingredients(self):
         valid_inputs = [1, 2]
 
-        print("Current ingredient list: ")
+        print("\nCurrent ingredient list: ")
         self.view_ingredients()
         remove_more_ingredients = True
 
@@ -78,33 +78,24 @@ class Recipe:
             input_validated = False
 
             while not ingredient_input_validated:
-                ingredient_to_remove = input("Enter index of ingredient to remove: ")
-                ingredient_to_remove_is_int = ingredient_to_remove.isdigit()
+                ingredient_to_remove = input("\nEnter index of ingredient to remove: ")
 
-                if ingredient_to_remove_is_int:
-                    ingredient_to_remove = int(ingredient_to_remove)
+                ingredient_input_validated = input_validation.recipe_input_validation(ingredient_to_remove, self.ingredients_list)
 
-                    if ingredient_to_remove > 0 and ingredient_to_remove < len(self.ingredients_list):
-                        ingredient_input_validated = True
-                        self.ingredients_list.pop(ingredient_to_remove - 1)
-                        print("New ingredient list: ")
-                        self.view_ingredients()
-                    else:
-                        print("\nInvalid input. Please try again.")
+                if ingredient_input_validated:
+                    self.ingredients_list.pop(int(ingredient_to_remove) - 1)
+                    print("\nNew ingredient list: ")
+                    self.view_ingredients()
                 else:
                     print("\nInvalid input. Please try again.")
 
             while not input_validated:
-                user_input = input("Would you like to remove another ingredient?: \n1. Yes \n2. No \n")
-                user_input_is_int = user_input.isdigit()
+                user_input = input("\nWould you like to remove another ingredient?: \n1. Yes \n2. No \n")
 
-                if user_input_is_int:
-                    user_input = int(user_input)
+                input_validated = input_validation.menu_input_validation(user_input, valid_inputs)
 
-                if user_input in valid_inputs:
-                    input_validated = True
-
-                    if user_input == 2:
+                if input_validated:
+                    if int(user_input) == 2:
                         remove_more_ingredients = False
                 else:
                     print("\nInvalid input. Please try again.")
