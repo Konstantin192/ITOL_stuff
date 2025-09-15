@@ -48,6 +48,11 @@ Regular expressions for validation of all string inputs.
 For a normal application regular expressions would be preferred for validation but as the project does not store data in
 a database this did not seem needed.
 
+Better application flow control
+Currently there are some menus that have the option to return to main menu and there are other menus which are submenus
+which can only go to their previous menu, not main menu. This makes for an awkward control and while changing it would
+not be challenging it would still take a lot of time as essentially the whole application will need to be re-tested.
+
 
 Challenges faced:
 Reading data from file and transforming it into code

@@ -150,9 +150,7 @@ def recipe_edit_menu_list(recipe_list):
             options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
 
             if options_input_validated:
-                if int(selected_option) == 1:
-                    recipe_edit_menu_list(recipe_list)
-                else:
+                if int(selected_option) == 2:
                     # ToDo Figure out how control flow should work here
                     back_to_main_menu = True
             else:
