@@ -6,6 +6,7 @@ class Recipe:
         self.ingredients_list = ingredients_list
         self.instructions = instructions
 
+
     def view_recipe_details(self):
         print("\nTitle:")
         print(f"{self.title} \n")
@@ -73,6 +74,9 @@ class Recipe:
         self.view_ingredients()
         remove_more_ingredients = True
 
+        if len(self.ingredients_list) == 0:
+            remove_more_ingredients = False
+
         while remove_more_ingredients:
             ingredient_input_validated = False
             input_validated = False
@@ -88,6 +92,10 @@ class Recipe:
                     self.view_ingredients()
                 else:
                     print("\nInvalid input. Please try again.")
+
+            if len(self.ingredients_list) == 0:
+                remove_more_ingredients = False
+                break
 
             while not input_validated:
                 user_input = input("\nWould you like to remove another ingredient?: \n1. Yes \n2. No \n")
@@ -107,6 +115,9 @@ class Recipe:
         print("\nCurrent ingredient list: ")
         self.view_ingredients()
         change_more_ingredients = True
+
+        if len(self.ingredients_list) == 0:
+            change_more_ingredients = False
 
         while change_more_ingredients:
             ingredient_input_validated = False
@@ -182,6 +193,9 @@ class Recipe:
         self.view_instructions()
         remove_more_instructions = True
 
+        if len(self.instructions) == 0:
+            remove_more_instructions = False
+
         while remove_more_instructions:
             instruction_input_validated = False
             input_validated = False
@@ -197,6 +211,10 @@ class Recipe:
                     self.view_instructions()
                 else:
                     print("\nInvalid input. Please try again.")
+
+            if len(self.instructions) == 0:
+                remove_more_instructions = False
+                break
 
             while not input_validated:
                 user_input = input("\nWould you like to remove another instruction?: \n1. Yes \n2. No \n")
@@ -216,6 +234,9 @@ class Recipe:
         print("\nCurrent instruction list: ")
         self.view_instructions()
         change_more_instructions = True
+
+        if len(self.instructions) == 0:
+            change_more_instructions = False
 
         while change_more_instructions:
             instruction_input_validated = False
