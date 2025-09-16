@@ -321,6 +321,10 @@ def recipe_search_menu(recipe_list):
     valid_search_inputs = [1, 2]
     valid_options_inputs = [1, 2, 3]
 
+    if len(recipe_list) == 0:
+        core_functions.view_recipes(recipe_list)
+        back_to_main_menu = True
+
     while not back_to_main_menu:
         search_input_validated = False
         options_input_validated = False
@@ -344,6 +348,10 @@ def recipe_search_menu(recipe_list):
                 print("\nInvalid input. Please try again.")
 
         core_functions.view_recipes(result_list)
+
+        if len(result_list) == 0:
+            back_to_main_menu = True
+            break
 
         print("\nOptions: ")
         print("1. Search more recipes")
