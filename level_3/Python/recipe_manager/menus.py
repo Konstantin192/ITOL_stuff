@@ -49,34 +49,37 @@ def recipe_view_menu(recipe_list):
     back_to_main_menu = False;
     valid_menu_inputs = [1, 2]
 
-    while not back_to_main_menu:
-        menu_input_validated = False
-        recipe_input_validated = False
+    if len(recipe_list) == 0:
         core_functions.view_recipes(recipe_list)
+    else:
+        while not back_to_main_menu:
+            menu_input_validated = False
+            recipe_input_validated = False
+            core_functions.view_recipes(recipe_list)
 
-        while not recipe_input_validated:
-            selected_recipe = input("\nSelect recipe to view: ")
+            while not recipe_input_validated:
+                selected_recipe = input("\nSelect recipe to view: ")
 
-            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
+                recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
 
-            if recipe_input_validated:
-                recipe_list[int(selected_recipe) - 1].view_recipe_details()
-            else:
-                print("\nInvalid input. Please try again.")
+                if recipe_input_validated:
+                    recipe_list[int(selected_recipe) - 1].view_recipe_details()
+                else:
+                    print("\nInvalid input. Please try again.")
 
-        while not menu_input_validated:
-            print("\nOptions: ")
-            print("1. View more Recipes")
-            print("2. Back to Main Menu")
-            option_select = input("\nWhat would you like to do? : ")
+            while not menu_input_validated:
+                print("\nOptions: ")
+                print("1. View more Recipes")
+                print("2. Back to Main Menu")
+                option_select = input("\nWhat would you like to do? : ")
 
-            menu_input_validated = input_validation.menu_input_validation(option_select, valid_menu_inputs)
+                menu_input_validated = input_validation.menu_input_validation(option_select, valid_menu_inputs)
 
-            if menu_input_validated:
-                if int(option_select) == 2:
-                    back_to_main_menu = True
-            else:
-                print("\nInvalid input. Please try again.")
+                if menu_input_validated:
+                    if int(option_select) == 2:
+                        back_to_main_menu = True
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
 def recipe_add_menu(recipe_list):

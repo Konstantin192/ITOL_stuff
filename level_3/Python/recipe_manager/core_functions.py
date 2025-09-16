@@ -22,8 +22,11 @@ def add_recipe(recipe_list):
 def view_recipes(recipe_list):
     print("\nCurrent recipes:")
 
-    for recipe in recipe_list:
-        print(f"{(recipe_list.index(recipe) + 1)}. {recipe.title}")
+    if len(recipe_list) == 0:
+        print("Recipe list is empty")
+    else:
+        for recipe in recipe_list:
+            print(f"{(recipe_list.index(recipe) + 1)}. {recipe.title}")
 
 
 def search_recipe_titles(recipe_list):

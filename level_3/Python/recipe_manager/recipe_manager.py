@@ -12,6 +12,7 @@ def main():
     recipe_list = list()
     load_recipes(recipe_list)
 
+    # TEST DATA
     # core_functions.add_recipe(recipe_list,
     #                           "Salad",
     #                           ["cucumbers", "tomatoes", "cow cheese"],
