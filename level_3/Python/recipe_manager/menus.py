@@ -111,53 +111,56 @@ def recipe_edit_menu_list(recipe_list):
     valid_edit_inputs = [1, 2, 3]
     valid_options_inputs = [1, 2]
 
-    while not back_to_main_menu:
-        recipe_input_validated = False
-        edit_input_validated = False
-        options_input_validated = False
-
+    if len(recipe_list) == 0:
         core_functions.view_recipes(recipe_list)
+    else:
+        while not back_to_main_menu:
+            recipe_input_validated = False
+            edit_input_validated = False
+            options_input_validated = False
 
-        while not recipe_input_validated:
-            selected_recipe = input("\nSelect recipe to edit: ")
+            core_functions.view_recipes(recipe_list)
 
-            recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
+            while not recipe_input_validated:
+                selected_recipe = input("\nSelect recipe to edit: ")
 
-            if recipe_input_validated:
-                recipe_list[int(selected_recipe) - 1].view_recipe_details()
-            else:
-                print("\nInvalid input. Please try again.")
+                recipe_input_validated = input_validation.recipe_input_validation(selected_recipe, recipe_list)
 
-        print("\nRecipe edit options: ")
-        print("1. Change title")
-        print("2. Edit ingredients")
-        print("3. Edit instructions")
+                if recipe_input_validated:
+                    recipe_list[int(selected_recipe) - 1].view_recipe_details()
+                else:
+                    print("\nInvalid input. Please try again.")
 
-        while not edit_input_validated:
-            selected_edit = input("\nWhat would you like to do? : ")
+            print("\nRecipe edit options: ")
+            print("1. Change title")
+            print("2. Edit ingredients")
+            print("3. Edit instructions")
 
-            edit_input_validated = input_validation.menu_input_validation(selected_edit, valid_edit_inputs)
+            while not edit_input_validated:
+                selected_edit = input("\nWhat would you like to do? : ")
 
-            if edit_input_validated:
-                recipe_edit_submenu(recipe_list, int(selected_recipe), int(selected_edit))
-            else:
-                print("\nInvalid input. Please try again.")
+                edit_input_validated = input_validation.menu_input_validation(selected_edit, valid_edit_inputs)
 
-        print("\nOptions: ")
-        print("1. Edit more recipes")
-        print("2. Main Menu")
+                if edit_input_validated:
+                    recipe_edit_submenu(recipe_list, int(selected_recipe), int(selected_edit))
+                else:
+                    print("\nInvalid input. Please try again.")
 
-        while not options_input_validated:
-            selected_option = input("\nWhat would you like to do? : ")
+            print("\nOptions: ")
+            print("1. Edit more recipes")
+            print("2. Main Menu")
 
-            options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
+            while not options_input_validated:
+                selected_option = input("\nWhat would you like to do? : ")
 
-            if options_input_validated:
-                if int(selected_option) == 2:
-                    # ToDo Figure out how control flow should work here
-                    back_to_main_menu = True
-            else:
-                print("\nInvalid input. Please try again.")
+                options_input_validated = input_validation.menu_input_validation(selected_option, valid_options_inputs)
+
+                if options_input_validated:
+                    if int(selected_option) == 2:
+                        # ToDo Figure out how control flow should work here
+                        back_to_main_menu = True
+                else:
+                    print("\nInvalid input. Please try again.")
 
 
 # This menu is used to edit a recipe when the user is currently viewing the full details of that recipe after a search
