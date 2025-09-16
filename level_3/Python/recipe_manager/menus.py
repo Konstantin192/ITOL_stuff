@@ -380,6 +380,9 @@ def recipe_search_menu(recipe_list):
 
                                 recipe_title = result_list[int(selected_recipe) - 1].title
                                 recipe_search_submenu(recipe_list, recipe_title)
+
+                                if len(recipe_list) == 0:
+                                    back_to_main_menu = True
                             else:
                                 print("\nInvalid input. Please try again.")
                     case 3:
