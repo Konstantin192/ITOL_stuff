@@ -276,6 +276,10 @@ def recipe_delete_menu(recipe_list):
     back_to_main_menu = False
     valid_options_inputs = [1, 2]
 
+    if len(recipe_list) == 0:
+        core_functions.view_recipes(recipe_list)
+        back_to_main_menu = True
+
     while not back_to_main_menu:
         recipe_input_validated = False
         options_input_validated = False
@@ -291,6 +295,10 @@ def recipe_delete_menu(recipe_list):
                 core_functions.delete_recipe(recipe_list, int(selected_recipe_delete) - 1)
             else:
                 print("\nInvalid input. Please try again.")
+
+        if len(recipe_list) == 0:
+            back_to_main_menu = True
+            break
 
         print("\nOptions: ")
         print("1. Delete more recipes")
