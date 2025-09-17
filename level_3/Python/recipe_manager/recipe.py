@@ -1,5 +1,6 @@
 import input_validation
 
+
 class Recipe:
     def __init__(self, title, ingredients_list, instructions):
         self.title = title
