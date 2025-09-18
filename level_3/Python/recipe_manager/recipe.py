@@ -1,13 +1,25 @@
 import input_validation
 
-
+"""
+Summary:
+    A recipe
+Attributes:
+    title (str): The title of the recipe
+    ingredients_list (list): The ingredients of the recipe
+    instructions (list): The instructions for the recipe
+"""
 class Recipe:
     def __init__(self, title, ingredients_list, instructions):
         self.title = title
         self.ingredients_list = ingredients_list
         self.instructions = instructions
 
-
+    """
+    Summary:
+        Provides the user with the full details of the recipe
+    Args:
+        self (Recipe): The Recipe for which to view the details
+    """
     def view_recipe_details(self):
         print("\nTitle:")
         print(f"{self.title} \n")
@@ -21,6 +33,12 @@ class Recipe:
         print("")
 
 
+    """
+    Summary:
+        Allows the user to change the title of the recipe
+    Args:
+        self (Recipe): The Recipe of which to change the title
+    """
     def change_title(self):
         old_title = self.title
 
@@ -31,6 +49,12 @@ class Recipe:
         print(f"Title changed FROM {old_title} TO {new_title}")
 
 
+    """
+    Summary:
+        Provides the list of ingredients of the recipe to the user
+    Args:
+        self (Recipe): The Recipe for which to view the ingredients
+    """
     def view_ingredients(self):
         if len(self.ingredients_list) == 0:
             print("No ingredients")
@@ -40,6 +64,12 @@ class Recipe:
                 print(f"{self.ingredients_list.index(ingredient) + 1}. {ingredient}")
 
 
+    """
+    Summary:
+        Allows the user to add ingredients to the recipe
+    Args:
+        self (Recipe): The Recipe of which to change the title
+    """
     def add_ingredients(self):
         valid_inputs = [1, 2]
 
@@ -68,6 +98,12 @@ class Recipe:
                     print("\nInvalid input. Please try again.")
 
 
+    """
+    Summary:
+        Allows the user to remove ingredients from the recipe
+    Args:
+        self (Recipe): The Recipe from which to remove ingredients
+    """
     def remove_ingredients(self):
         valid_inputs = [1, 2]
 
@@ -110,6 +146,12 @@ class Recipe:
                     print("\nInvalid input. Please try again.")
 
 
+    """
+    Summary:
+        Allows the user to change existing ingredients from the recipe
+    Args:
+        self (Recipe): The Recipe of which to change ingredients
+    """
     def change_ingredients(self):
         valid_inputs = [1, 2]
 
@@ -150,6 +192,12 @@ class Recipe:
                     print("\nInvalid input. Please try again.")
 
 
+    """
+    Summary:
+        Allows the user to view the instructions of the recipe
+    Args:
+        self (Recipe): The Recipe of which to view the instructions
+    """
     def view_instructions(self):
         if len(self.instructions) == 0:
             print("No instructions")
@@ -159,6 +207,12 @@ class Recipe:
                 print(f"{self.instructions.index(instruction) + 1}. {instruction}")
 
 
+    """
+    Summary:
+        Allows the user to add instructions to the recipe
+    Args:
+        self (Recipe): The Recipe for which to add instructions
+    """
     def add_instructions(self):
         valid_inputs = [1, 2]
 
@@ -187,6 +241,12 @@ class Recipe:
                     print("\nInvalid input. Please try again.")
 
 
+    """
+    Summary:
+        Allows the user to remove instructions from the recipe
+    Args:
+        self (Recipe): The Recipe from which to remove instructions
+    """
     def remove_instructions(self):
         valid_inputs = [1, 2]
 
@@ -229,6 +289,12 @@ class Recipe:
                     print("\nInvalid input. Please try again.")
 
 
+    """
+    Summary:
+        Allows the user to change existing instructions of the recipe
+    Args:
+        self (Recipe): The Recipe of which to change the instructions
+    """
     def change_instructions(self):
         valid_inputs = [1, 2]
 

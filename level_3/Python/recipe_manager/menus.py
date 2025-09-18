@@ -3,6 +3,12 @@ import input_validation
 import traceback
 
 
+"""
+Summary:
+    The starting and ending point of the application. From here the user can navigate to all other menus.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def main_menu(recipe_list):
     application_exit = False
     valid_inputs = [1, 2, 3, 4, 5, 0]
@@ -52,6 +58,12 @@ def main_menu(recipe_list):
         core_functions.log_error(error)
 
 
+"""
+Summary:
+    Shows  the user the list with the names of all of the recipes
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def recipe_view_menu(recipe_list):
     back_to_main_menu = False
     valid_menu_inputs = [1, 2]
@@ -95,6 +107,12 @@ def recipe_view_menu(recipe_list):
         core_functions.log_error(error)
 
 
+"""
+Summary:
+    Allows the user to add recipes to the recipe list.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def recipe_add_menu(recipe_list):
     back_to_main_menu = False
     valid_inputs = [1, 2]
@@ -123,7 +141,12 @@ def recipe_add_menu(recipe_list):
         core_functions.log_error(error)
 
 
-# This menu is used for editing recipes when the user is presented with the list of all recipes and has to select one
+"""
+Summary:
+    Allows the user to edit recipes when the user is presented with the list of all recipe names and has to select one.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def recipe_edit_menu_list(recipe_list):
     back_to_main_menu = False
     valid_edit_inputs = [1, 2, 3]
@@ -187,7 +210,13 @@ def recipe_edit_menu_list(recipe_list):
         core_functions.log_error(error)
 
 
-# This menu is used to edit a recipe when the user is currently viewing the full details of that recipe after a search
+"""
+Summary:
+    Allows the user to edit a recipe when the user is currently viewing the full details of that recipe after a search.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+    recipe_index (int): The index of the recipe within the recipe list
+"""
 def recipe_edit_menu_direct(recipe_list, recipe_index):
     back_to_previous_menu = False
     valid_edit_inputs = [1, 2, 3]
@@ -235,7 +264,6 @@ def recipe_edit_menu_direct(recipe_list, recipe_index):
                     if int(selected_option) == 1:
                         edit_input_validated = False
                     else:
-                        # ToDo Figure out how control flow should work here
                         back_to_previous_menu = True
                 else:
                     print("\nInvalid input. Please try again.")
@@ -245,6 +273,14 @@ def recipe_edit_menu_direct(recipe_list, recipe_index):
         core_functions.log_error(error)
 
 
+"""
+Summary:
+    Allows the user to select the particular type of edit they want to do on a recipe.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+    selected_recipe (int): User input of the selected recipe from the displayed list
+    selected_edit (int): User input of the selected type of edit from the displayed list
+"""
 def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
     ingredient_edit_input_validated = False
     instructions_edit_input_validated = False
@@ -301,6 +337,12 @@ def recipe_edit_submenu(recipe_list, selected_recipe, selected_edit):
                     print("\nInvalid input. Please try again.")
 
 
+"""
+Summary:
+    Allows the user to delete recipes.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def recipe_delete_menu(recipe_list):
     back_to_main_menu = False
     valid_options_inputs = [1, 2]
@@ -350,6 +392,12 @@ def recipe_delete_menu(recipe_list):
         core_functions.log_error(error)
 
 
+"""
+Summary:
+    Allows the user to search through the recipe list for specific recipe / recipes.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+"""
 def recipe_search_menu(recipe_list):
     back_to_main_menu = False
     valid_search_inputs = [1, 2]
@@ -428,6 +476,13 @@ def recipe_search_menu(recipe_list):
         core_functions.log_error(error)
 
 
+"""
+Summary:
+    Allows the user to perform actions on a recipe which they are viewing the full details of following a search.
+Args:
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+    recipe_title (string): The title of the recipe that the user has selected to view the details of
+"""
 def recipe_search_submenu(recipe_list, recipe_title):
     back_to_previous_menu = False
     valid_options_inputs = [1, 2, 3]

@@ -1,3 +1,12 @@
+"""
+Summary:
+    Validates user input when selecting options from a defined options list.
+Args:
+    user_input (string): The menu selected by the user.
+    valid_inputs (array): The valid menu selection options.
+Returns:
+    input_validated (bool): Whether the user input has been validated.
+"""
 def menu_input_validation(user_input, valid_inputs):
     user_input_is_int = user_input.isdigit()
 
@@ -12,6 +21,15 @@ def menu_input_validation(user_input, valid_inputs):
     return input_validated
 
 
+"""
+Summary:
+    Validates the user input when selecting from a variable list, e.g. the recipe list which can have an unspecified number of recipes.
+Args:
+    user_input (string): The recipe selected by the user
+    recipe_list (list): The list containing all of the data of all recipes (title, ingredients, instructions)
+Returns:
+    input_validated (bool): Whether the user input has been validated.
+"""
 def recipe_input_validation(user_input, recipe_list):
     user_input_is_int = user_input.isdigit()
 

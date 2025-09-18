@@ -2,7 +2,6 @@ import core_functions
 import menus
 
 
-# Todo make sure all code follows the same logic for error input - either repeat menu after invalid input OR don't
 def main():
     recipe_list = list()
     core_functions.load_recipes(recipe_list)

@@ -16,7 +16,7 @@ Require the user to enter "0" after they are done with their edits - not annoyin
 can feel a bit odd from an end user standpoint
 
 File I/O
-CSV vs JSON -
+CSV vs JSON
 
 Editing / Deleting recipes option place - At main menu level OR At recipe details level
 It would be more obvious to the user if the edit and delete recipe options were present at the main menu. If they were
@@ -57,6 +57,9 @@ Recipe list save to file after every change
 Currently the recipe list stored in the text file is only saved just before the application closes. This could result in
 change loss if the app unexpectedly crashes during a session. Changing this at this point would require lots of time as
 the whole application will need to be re-tested.
+
+Make sure all code follows the same logic for error input
+Either repeat menu after invalid input OR don't
 
 
 Challenges faced:
