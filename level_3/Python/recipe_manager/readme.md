@@ -13,6 +13,8 @@ Upon launching the application the stored recipes, if there are any, are loaded 
 Unexpected errors are logged to an error log file, error_log.txt, located in the same folder as the application.
 
 ## How to use:
+To launch the application go into the "dist" folder, in there should be located the recipe_manager.exe
+
 Follow the application prompts for the required user inputs.
 
 When being asked to select an option from a menu or a list enter the on-screen number corresponding to the option.
